@@ -234,34 +234,87 @@ Expected:
 
 ### Como Usar Este Briefing
 
-**No seu terminal BMAD:**
+### ⚠️ Importante: Como Invocar Skills do BMAD
+
+As skills do BMAD NÃO são comandos npm. Após `npx bmad-method install`, elas ficam em:
+- `.claude/skills/` — Integradas com Claude Code
+- Invocáveis via Claude agent ou prompt direto
+
+**Forma 1: Via Agente Claude (Recomendado)**
 
 ```bash
-# 1. Copie o briefing acima para um arquivo
-cat > DIET_PLANNER.briefing << 'EOF'
-[cole o conteúdo acima]
-EOF
+# No seu projeto new-diet-planner
+cd new-diet-planner
 
-# 2. Invoque skill com o briefing
+# Lance seu agente Claude
+# (seu terminal Claude Code, não npm)
+```
+
+Depois converse com o agente:
+
+```
+Aqui está o briefing do projeto Diet Planner:
+
+[Cole a seção BMAD Agent Briefing completa]
+
+Usando este briefing, invoque a skill bmad-build para:
+1. Criar types.ts baseado no spec JSON
+2. Implementar agent.ts com Claude API integration
+3. Criar tests das 2 stories
+4. Validar contra constraints
+5. Salvar output em _bmad-output/
+```
+
+**Forma 2: Invocar Skills Diretamente**
+
+Depois de instalar BMAD, as skills estão disponíveis como prompts. Use Claude Code com:
+
+```
+/bmad-build
+
+[Cole o briefing]
+```
+
+Ou se tiver acesso ao CLI BMAD:
+
+```bash
+# Ver skills disponíveis
+ls .claude/skills/
+
+# Ou listar via BMAD
+bmad --help
+```
+
+### ❌ O que NÃO funciona:
+
+```bash
+# ❌ ERRADO - bmad-build não é pacote npm
+npx bmad-build DIET_PLANNER.briefing
+
+# ❌ ERRADO - não está em PATH
 bmad-build DIET_PLANNER.briefing
-
-# Ou invoque direto no agente Claude
-# "Implement this BMAD briefing for Diet Planner" + cole o conteúdo
 ```
 
-**Ou direto em uma conversa com seu agent:**
+### ✅ O que FUNCIONA:
 
+**Opção A: Conversa com Claude Agent**
 ```
-Hey BMAD, aqui está o briefing do projeto:
+Hey Claude, implemente este BMAD briefing:
+[Cole briefing]
+```
 
-[Cole a seção de BMAD Agent Briefing]
+**Opção B: Usar skill bmad-build via prompt**
+```
+/bmad-build
 
-Preciso que você:
-1. Crie os types.ts baseado no spec
-2. Implemente o agent.ts com Claude API
-3. Crie testes para as 2 stories
-4. Valide contra as constraints
-5. Salve em _bmad-output/
+[Cole briefing]
+```
+
+**Opção C: Via Claude Code no terminal**
+```bash
+cd new-diet-planner
+# Lance Claude Code aqui
+# Use /skills ou /bmad-build
 ```
 
 ---
