@@ -1,309 +1,68 @@
 ---
 slug: bmad-method
 title: "BMAD-METHOD: Desenvolvimento Dirigido por Especificação (Hands-On)"
-description: "Metodologia prática para construir agentes com specs estruturadas - exemplo real com Diet Planner"
-tags: [bmad, agentes, metodologia, desenvolvimento, hands-on]
+description: "Metodologia prática de spec-first com 3 workflows: custom scripts, oficial BMAD, ou Claude CLI. Exemplo real: Diet Planner"
+tags: [bmad, agentes, metodologia, desenvolvimento, hands-on, claude]
 authors: [rafael]
 ---
 
 # BMAD-METHOD: Desenvolvimento Dirigido por Especificação (Hands-On)
 
-Chega de agentes que "funcionam às vezes". BMAD-METHOD é uma abordagem **spec-first** que você pode aplicar hoje em seus projetos. Neste artigo, vamos construir juntos um **Diet Planner** - agente que gera planos de dieta personalizados com opções de cardápio.
+Chega de agentes que "funcionam às vezes". BMAD-METHOD é uma abordagem **spec-first** que coloca a especificação clara no centro do desenvolvimento. 
+
+Este artigo é **100% prático**: você vai seguir um passo-a-passo real para construir um **Diet Planner** - agente que gera planos de dieta personalizados. Vou mostrar **3 workflows diferentes** para você escolher qual se adapta melhor.
 
 <!--truncate-->
 
-## O que é BMAD (Behavior-Marked Agent Development)?
+## O que é BMAD?
 
-BMAD é uma metodologia que coloca **especificação clara** no centro do desenvolvimento:
+BMAD = **Behavior-Marked Agent Development**. Princípios:
 
-1. **Spec-First**: Especificação completa antes de código
-2. **Behavior-Marked**: Comportamentos bem definidos e testáveis
-3. **Agent-as-Code**: Lógica explícita, sem magic
+1. **Spec-First**: Especificação clara antes de qualquer código
+2. **Behavior-Marked**: Comportamentos bem definidos e testáveis  
+3. **Agent-as-Code**: Lógica explícita, sem "magic"
 4. **Story-Driven**: Testes baseados em casos de uso reais
-5. **Control Preservation**: Você controla tudo
+5. **Control Preservation**: Você controla 100% do comportamento
 
 ---
 
-## Projeto Real: Diet Planner Agent
+## Exemplo Real: Diet Planner
 
 Vamos construir um agente que:
-- Recebe preferências do usuário (restrições, objetivos, metas calóricas)
-- Gera plano de dieta personalizado
-- Oferece múltiplas opções de cardápio
-- Retorna resultado estruturado
+- Recebe dados pessoais + preferências do usuário
+- Gera plano de dieta personalizado para 7 dias
+- Oferece **múltiplas opções** para cada refeição
+- Valida contra restrições (vegetariano, sem lactose, etc.)
+- Retorna JSON estruturado pronto para uso
 
-### Passo 1: Especificação Completa
+**Base:** Projeto real https://github.com/rafaelbercam/dietPlan (Vue 3 + Vite + GitHub Pages)
 
-Antes de qualquer código, escrevemos a spec completa:
+---
 
-```markdown
-# Diet Planner Agent - Especificação
+## Passo 1: Entender a Especificação
 
-## Objetivo
-Gerar um plano de dieta personalizado com 7 dias de cardápio
-baseado nas preferências, restrições e objetivos nutricionais do usuário.
+Antes de qualquer código, definimos **o que o agente deve fazer**:
 
-## Inputs
-- age: number (18-80)
-- weight_kg: number
-- height_cm: number
-- activity_level: "sedentário" | "leve" | "moderado" | "intenso" | "muito_intenso"
-- dietary_restrictions: string[] (e.g., ["vegetariano", "sem_gluten"])
-- fitness_goals: string[] (e.g., ["perda_peso", "ganho_muscular", "saúde"])
-- daily_calorie_target: number (opcional, calculado se não fornecido)
+### Inputs (O que o agente recebe)
 
-## Behavior - Story Files
+```typescript
+{
+  age: 32,
+  weight_kg: 85,
+  height_cm: 180,
+  activity_level: "moderado",
+  fitness_goals: ["perda_peso"],
+  dietary_restrictions: [],
+  preferred_foods: ["frango", "arroz integral"],
+  disliked_foods: ["ovos"]
+}
+```
 
-### Story 1: Usuário Comum com Objetivo de Perda de Peso
-Input:
-- age: 32
-- weight_kg: 85
-- height_cm: 180
-- activity_level: "moderado"
-- dietary_restrictions: []
-- fitness_goals: ["perda_peso"]
+### Expected Output (O que o agente deve retornar)
 
-Expected Output:
 ```json
 {
   "daily_calorie_target": 2200,
-  "meal_plan": {
-    "day": 1,
-    "meals": [
-      {
-        "type": "café da manhã",
-        "options": [
-          {
-            "name": "Ovos scrambled com toast integral",
-            "calories": 350,
-            "protein_g": 25,
-            "carbs_g": 30,
-            "fat_g": 12
-          },
-          {
-            "name": "Iogurte grego com granola e banana",
-            "calories": 340,
-            "protein_g": 20,
-            "carbs_g": 45,
-            "fat_g": 8
-          }
-        ]
-      },
-      {
-        "type": "almoço",
-        "options": [
-          {
-            "name": "Frango grelhado, arroz integral, brócolis",
-            "calories": 520,
-            "protein_g": 45,
-            "carbs_g": 55,
-            "fat_g": 10
-          }
-        ]
-      },
-      {
-        "type": "lanche",
-        "options": [
-          {
-            "name": "Maçã com manteiga de amendoim",
-            "calories": 200,
-            "protein_g": 8,
-            "carbs_g": 25,
-            "fat_g": 8
-          }
-        ]
-      },
-      {
-        "type": "jantar",
-        "options": [
-          {
-            "name": "Salmão grelhado, batata doce, espinafre",
-            "calories": 420,
-            "protein_g": 40,
-            "carbs_g": 40,
-            "fat_g": 14
-          }
-        ]
-      }
-    ],
-    "total_calories": 1490,
-    "macro_targets": {
-      "protein_g": 113,
-      "carbs_g": 150,
-      "fat_g": 42
-    }
-  },
-  "week_variety": {
-    "description": "7 dias diferentes com rotação de alimentos",
-    "highlights": ["Diferentes proteínas", "Opções vegetarianas", "Refeições rápidas"]
-  }
-}
-```
-
-### Story 2: Vegetariano com Ganho de Músculo
-Input:
-- dietary_restrictions: ["vegetariano"]
-- fitness_goals: ["ganho_muscular"]
-
-Expected Behavior:
-- Proteína aumentada para 2.0g/kg
-- Foco em fontes vegetais: legumes, tofu, tempeh, nozes
-- Cardápio deve oferecer MÚLTIPLAS opções por refeição
-
----
-
-## Passo 2: Estrutura de Código (Agent-as-Code)
-
-### 2a. Setup do Projeto
-
-```bash
-# Clonar ou criar novo projeto
-git clone https://github.com/rafaelbercam/dietPlan
-cd dietPlan
-
-# Instalar dependências
-npm install
-
-# Ou usar template do seu próprio projeto
-```
-
-### 2b. Implementação do Agent
-
-```typescript
-// src/agents/dietPlannerAgent.ts
-
-interface DietSpecification {
-  age: number;
-  weight_kg: number;
-  height_cm: number;
-  activity_level: "sedentário" | "leve" | "moderado" | "intenso" | "muito_intenso";
-  dietary_restrictions: string[];
-  fitness_goals: string[];
-  daily_calorie_target?: number;
-}
-
-interface MealOption {
-  name: string;
-  calories: number;
-  protein_g: number;
-  carbs_g: number;
-  fat_g: number;
-}
-
-interface DietPlan {
-  daily_calorie_target: number;
-  meal_plan: Array<{
-    day: number;
-    meals: Array<{
-      type: "café da manhã" | "almoço" | "lanche" | "jantar";
-      options: MealOption[];
-    }>;
-    total_calories: number;
-  }>;
-  week_variety: {
-    description: string;
-    highlights: string[];
-  };
-}
-
-export class DietPlannerAgent {
-  private spec: DietSpecification;
-
-  constructor(spec: DietSpecification) {
-    this.validateSpec(spec);
-    this.spec = spec;
-  }
-
-  private validateSpec(spec: DietSpecification): void {
-    if (spec.age < 18 || spec.age > 80) {
-      throw new Error("Idade deve estar entre 18 e 80 anos");
-    }
-    if (spec.weight_kg <= 0 || spec.height_cm <= 0) {
-      throw new Error("Peso e altura devem ser positivos");
-    }
-  }
-
-  private calculateCalorieTarget(): number {
-    // Fórmula de Harris-Benedict ajustada
-    let bmr: number;
-    const age = this.spec.age;
-    const weight = this.spec.weight_kg;
-    const height = this.spec.height_cm;
-
-    bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
-
-    const activityMultipliers: Record<string, number> = {
-      sedentário: 1.2,
-      leve: 1.375,
-      moderado: 1.55,
-      intenso: 1.725,
-      muito_intenso: 1.9
-    };
-
-    const tdee = bmr * (activityMultipliers[this.spec.activity_level] || 1.55);
-
-    // Ajuste por objetivo
-    let target = tdee;
-    if (this.spec.fitness_goals.includes("perda_peso")) {
-      target *= 0.85; // 15% deficit
-    } else if (this.spec.fitness_goals.includes("ganho_muscular")) {
-      target *= 1.1; // 10% superávit
-    }
-
-    return Math.round(target);
-  }
-
-  async generatePlan(): Promise<DietPlan> {
-    const calorieTarget = this.spec.daily_calorie_target || this.calculateCalorieTarget();
-
-    // TODO: Integrar com Claude para gerar opções de refeições
-    // usando a spec como contexto
-
-    // Por enquanto, retornar estrutura esperada
-    return {
-      daily_calorie_target: calorieTarget,
-      meal_plan: [], // Preenchido por Claude
-      week_variety: {
-        description: "Plano variadoajustado à sua especificação",
-        highlights: []
-      }
-    };
-  }
-}
-```
-
----
-
-## Passo 3: Integração com Claude (Usando BMAD)
-
-### 3a. Prompt Estruturado
-
-```typescript
-// src/prompts/dietPlannerPrompt.ts
-
-export const DIET_SPEC_PROMPT = (spec: DietSpecification, calorieTarget: number) => `
-Você é um nutricionista especializado em planos de dieta personalizados.
-
-## Especificação do Usuário
-- Idade: ${spec.age} anos
-- Peso: ${spec.weight_kg}kg
-- Altura: ${spec.height_cm}cm
-- Nível de atividade: ${spec.activity_level}
-- Restrições dietéticas: ${spec.dietary_restrictions.length > 0 ? spec.dietary_restrictions.join(", ") : "Nenhuma"}
-- Objetivos: ${spec.fitness_goals.join(", ")}
-- Alvo calórico diário: ${calorieTarget} kcal
-
-## Tarefa
-Gere um plano de dieta de 7 dias com:
-1. Múltiplas opções de cardápio para cada refeição
-2. Informações nutricionais detalhadas (calorias, proteína, carbs, gordura)
-3. Variedade de alimentos ao longo da semana
-4. Respeitar TODAS as restrições dietéticas
-
-## Formato de Saída
-Retorne válido JSON seguindo este schema:
-{
-  "daily_calorie_target": ${calorieTarget},
   "meal_plan": [
     {
       "day": 1,
@@ -312,256 +71,389 @@ Retorne válido JSON seguindo este schema:
           "type": "café da manhã",
           "options": [
             {
-              "name": "...",
-              "calories": ...,
-              "protein_g": ...,
-              "carbs_g": ...,
-              "fat_g": ...
+              "name": "Toast integral com frango",
+              "calories": 350,
+              "protein_g": 25,
+              "carbs_g": 30,
+              "fat_g": 12
+            },
+            {
+              "name": "Aveia com frutas",
+              "calories": 340,
+              "protein_g": 12,
+              "carbs_g": 55,
+              "fat_g": 8
             }
           ]
         }
       ],
-      "total_calories": ...
+      "total_calories": 2200
     }
-  ],
-  "week_variety": {
-    "description": "...",
-    "highlights": ["..."]
-  }
+  ]
 }
-
-## Constraints
-- Total de calorias ± 5% do alvo
-- Proteína mínima: ${Math.max(80, spec.weight_kg * 1.6)}g/dia
-- NUNCA incluir itens das restrições dietéticas
-- Cardápio deve ser realista e preparável em casa
-`;
 ```
 
-### 3b. Usar o Agent com Claude
+### Validações Esperadas
 
-```typescript
-// src/services/dietPlanService.ts
+- ✅ Total calórico ±5% do target
+- ✅ Proteína mínima baseada em objetivo (1.4g/kg para perda peso, 2.0g/kg para ganho muscular)
+- ✅ Nenhum alimento em `disliked_foods`
+- ✅ Nenhum alimento banido por `dietary_restrictions`
+- ✅ Cada refeição tem **mínimo 2 opções**
+- ✅ 7 dias com variedade de alimentos
 
-import Anthropic from "@anthropic-ai/sdk";
-import { DietPlannerAgent } from "../agents/dietPlannerAgent";
-import { DIET_SPEC_PROMPT } from "../prompts/dietPlannerPrompt";
+---
 
-export async function generateDietPlan(spec: DietSpecification): Promise<DietPlan> {
-  const agent = new DietPlannerAgent(spec);
-  const calorieTarget = spec.daily_calorie_target || agent.calculateCalories();
+## Passo 2: Escolha seu Workflow
 
-  const client = new Anthropic();
+### Workflow A: Official BMAD (Recomendado)
 
-  const message = await client.messages.create({
-    model: "claude-3-5-sonnet-20241022",
-    max_tokens: 4096,
-    messages: [
-      {
-        role: "user",
-        content: DIET_SPEC_PROMPT(spec, calorieTarget)
-      }
-    ]
-  });
+**Melhor para:** Ferramenta oficial com suporte, geração automática de código.
 
-  // Extrair JSON da resposta
-  const content = message.content[0];
-  if (content.type !== "text") {
-    throw new Error("Resposta inesperada do Claude");
-  }
+```bash
+# 1. Instalar
+npx bmad-method install
 
-  // Parse JSON (com tratamento de erros)
-  const jsonMatch = content.text.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) {
-    throw new Error("Não foi possível extrair JSON da resposta");
-  }
+# 2. Criar projeto
+npx bmad-method create diet-planner
+cd diet-planner
 
-  return JSON.parse(jsonMatch[0]) as DietPlan;
-}
+# 3. Criar spec interativa
+npx bmad-method spec:create
+```
+
+Responda aos prompts:
+- Project name: `Diet Planner`
+- Description: `Agente que gera planos de dieta personalizados`
+- Inputs: `age, weight_kg, height_cm, activity_level, dietary_restrictions, fitness_goals`
+- Outputs: `{ daily_calorie_target, meal_plan[] }`
+- Story 1: `Perda de Peso - age=32, weight_kg=85, fitness_goals=["perda_peso"]`
+- Story 2: `Vegetariano - dietary_restrictions=["vegetariano"], fitness_goals=["ganho_muscular"]`
+
+```bash
+# 4. Gerar código
+npx bmad-method generate:agent   # Agent scaffold
+npx bmad-method generate:types   # TypeScript types
+npx bmad-method generate:tests   # Tests das stories
+```
+
+Isso gera:
+- `src/agent.ts` — Estrutura do agent
+- `src/types.ts` — Types validados
+- `tests/agent.test.ts` — Testes das stories
+- `bmad-spec.json` — Spec estruturada
+
+---
+
+### Workflow B: Claude CLI + Manual (Terminal)
+
+**Melhor para:** Sem API keys, terminal-based workflow, integração com scripts locais.
+
+```bash
+# 1. No seu projeto
+mkdir diet-planner && cd diet-planner
+npm init -y
+
+# 2. Criar spec via Claude CLI (terminal)
+claude "Crie uma especificação BMAD estruturada para:
+- Projeto: Diet Planner
+- Inputs: age, weight_kg, height_cm, activity_level, dietary_restrictions, fitness_goals
+- Outputs: { daily_calorie_target, meal_plan[] }
+- Story 1: Perda de peso (user age=32, weight=85kg)
+- Story 2: Vegetariano (dietary_restrictions=['vegetariano'])
+Formato JSON, pronto para implementação" > spec.json
+
+# 3. Revisar spec
+cat spec.json
+
+# 4. Gerar types baseado em spec
+claude "Baseado nesta spec BMAD, crie tipos TypeScript" < spec.json > src/types.ts
+
+# 5. Gerar agent skeleton
+claude "Crie um agent TypeScript skeleton usando estes types" < src/types.ts > src/agent.ts
+
+# 6. Gerar testes das stories
+claude "Crie testes Jest baseados nas stories da spec" < spec.json > tests/agent.test.ts
 ```
 
 ---
 
-## Passo 4: Testar com Story Files
+### Workflow C: Spec-Only (Learn Mode)
 
-### 4a. Testes Baseados em Specs
+**Melhor para:** Entender a metodologia antes de implementar.
+
+Leia a especificação completa no arquivo:
+```bash
+cat docs/BMAD-dietPlan-example.md
+```
+
+Contém:
+- Estrutura real do projeto dietPlan
+- 2 stories com dados reais
+- Tipos TypeScript reais
+- Validações esperadas
+- Integration points com mealPlanService.ts
+
+---
+
+## Passo 3: Implementar o Agent
+
+Qualquer que seja seu workflow, você terá agora:
+- ✅ Spec validada
+- ✅ Types gerados
+- ✅ Structure do agent
+- ✅ Testes das stories
+
+### Implementação Básica (TypeScript + Claude API)
 
 ```typescript
-// tests/dietPlanner.test.ts
+import Anthropic from '@anthropic-ai/sdk';
+import type { DietPlanRequest, MealPlanPeriod } from './types';
 
-import { generateDietPlan } from "../src/services/dietPlanService";
+const client = new Anthropic();
 
-describe("DietPlannerAgent - Story Tests", () => {
-  test("Story 1: Perda de Peso - Usuário Comum", async () => {
-    const spec = {
-      age: 32,
-      weight_kg: 85,
-      height_cm: 180,
-      activity_level: "moderado" as const,
-      dietary_restrictions: [],
-      fitness_goals: ["perda_peso"]
-    };
+async function generateDietPlan(request: DietPlanRequest): Promise<MealPlanPeriod> {
+  const message = await client.messages.create({
+    model: 'claude-3-5-sonnet-20241022',
+    max_tokens: 4096,
+    messages: [{
+      role: 'user',
+      content: `
+        Você é um nutricionista especializado em planos de dieta.
+        
+        Gere um plano de dieta baseado nesta especificação BMAD:
+        ${JSON.stringify(request, null, 2)}
+        
+        Retorne válido JSON seguindo o schema MealPlanPeriod com:
+        - 7 dias de cardápio
+        - Múltiplas opções para cada refeição
+        - Respeitando TODAS as restrições dietéticas
+        - Total calórico dentro de ±5% do target
+      `
+    }]
+  });
 
-    const plan = await generateDietPlan(spec);
+  // Parse response
+  const content = message.content[0];
+  if (content.type !== 'text') throw new Error('Unexpected response');
+  
+  const jsonMatch = content.text.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) throw new Error('No JSON in response');
+  
+  return JSON.parse(jsonMatch[0]) as MealPlanPeriod;
+}
 
-    // Validações segundo a spec
-    expect(plan.daily_calorie_target).toBeCloseTo(2200, -1); // ±100
-    expect(plan.meal_plan).toHaveLength(7); // 7 dias
-    
-    plan.meal_plan.forEach((day) => {
-      // Total de calorias ±5%
-      expect(day.total_calories).toBeCloseTo(2200, 0);
-      
-      // Cada refeição tem múltiplas opções
-      day.meals.forEach((meal) => {
-        expect(meal.options.length).toBeGreaterThan(1);
-      });
+// Usar
+const result = await generateDietPlan({
+  age: 32,
+  weight_kg: 85,
+  height_cm: 180,
+  activity_level: 'moderado',
+  fitness_goals: ['perda_peso'],
+  dietary_restrictions: [],
+  preferred_foods: ['frango'],
+  disliked_foods: ['ovos']
+});
+
+console.log(result);
+```
+
+---
+
+## Passo 4: Testar com Stories
+
+### Story 1: Perda de Peso (Sem Restrições)
+
+```typescript
+test('Story 1: Perda de Peso', async () => {
+  const request = {
+    age: 32,
+    weight_kg: 85,
+    height_cm: 180,
+    activity_level: 'moderado' as const,
+    fitness_goals: ['perda_peso'],
+    dietary_restrictions: [],
+    preferred_foods: ['frango', 'arroz integral'],
+    disliked_foods: ['ovos']
+  };
+
+  const result = await generateDietPlan(request);
+
+  // Validações
+  expect(result.meal_plan).toHaveLength(7); // 7 dias
+  expect(result.daily_calorie_target).toBeCloseTo(2200, -1); // ±100
+
+  // Cada refeição tem múltiplas opções
+  result.meal_plan.forEach(day => {
+    day.meals.forEach(meal => {
+      expect(meal.options.length).toBeGreaterThanOrEqual(2);
     });
   });
 
-  test("Story 2: Vegetariano - Ganho de Massa", async () => {
-    const spec = {
-      age: 28,
-      weight_kg: 75,
-      height_cm: 175,
-      activity_level: "intenso" as const,
-      dietary_restrictions: ["vegetariano"],
-      fitness_goals: ["ganho_muscular"]
-    };
+  // Nenhum ovo (disliked)
+  const allFoods = result.meal_plan
+    .flatMap(d => d.meals)
+    .flatMap(m => m.options)
+    .map(o => o.name.toLowerCase());
+  
+  expect(allFoods.every(f => !f.includes('ovo'))).toBe(true);
+});
+```
 
-    const plan = await generateDietPlan(spec);
+### Story 2: Vegetariano com Ganho de Massa
 
-    // Proteína aumentada para ganho muscular
-    plan.meal_plan.forEach((day) => {
-      const totalProtein = day.meals.reduce((sum, meal) => {
-        return sum + meal.options[0].protein_g; // Pega primeira opção
-      }, 0);
-      expect(totalProtein).toBeGreaterThanOrEqual(75 * 1.8); // 1.8g/kg mínimo
-    });
+```typescript
+test('Story 2: Vegetariano Ganho Muscular', async () => {
+  const request = {
+    age: 28,
+    weight_kg: 65,
+    height_cm: 165,
+    activity_level: 'intenso' as const,
+    fitness_goals: ['ganho_muscular'],
+    dietary_restrictions: ['vegetariano'],
+    preferred_foods: ['tofu', 'legumes'],
+    disliked_foods: []
+  };
 
-    // Nenhuma refeição com carne
-    plan.meal_plan.forEach((day) => {
-      day.meals.forEach((meal) => {
-        meal.options.forEach((option) => {
-          const forbiddenFoods = ["frango", "carne", "peixe", "ovos"];
-          forbiddenFoods.forEach((food) => {
-            expect(option.name.toLowerCase()).not.toContain(food);
-          });
-        });
-      });
-    });
+  const result = await generateDietPlan(request);
+
+  // Proteína mínima: 65kg * 2.0g/kg = 130g
+  const totalProtein = result.meal_plan[0].meals
+    .flatMap(m => m.options)
+    .reduce((sum, o) => sum + o.protein_g, 0);
+  
+  expect(totalProtein).toBeGreaterThanOrEqual(130);
+
+  // Nenhuma carne/ovos/laticínios
+  const forbiddenFoods = ['frango', 'carne', 'peixe', 'ovos', 'leite', 'queijo'];
+  const allFoods = result.meal_plan
+    .flatMap(d => d.meals)
+    .flatMap(m => m.options)
+    .map(o => o.name.toLowerCase());
+  
+  forbiddenFoods.forEach(food => {
+    expect(allFoods.every(f => !f.includes(food))).toBe(true);
   });
 });
 ```
 
-### 4b. Executar Testes
+### Rodar Testes
 
 ```bash
-npm test -- dietPlanner.test.ts
+# Official BMAD
+npx bmad-method test
+
+# Ou seu framework
+npm test
 ```
 
 ---
 
-## Passo 5: Deploy (GitHub Pages)
+## Passo 5: Deploy no GitHub Pages
 
-### 5a. Estrutura do Repo
-
-```
-dietPlan/
-├── src/
-│   ├── agents/
-│   │   └── dietPlannerAgent.ts
-│   ├── services/
-│   │   └── dietPlanService.ts
-│   ├── prompts/
-│   │   └── dietPlannerPrompt.ts
-│   └── pages/
-│       └── index.tsx (React component)
-├── tests/
-│   └── dietPlanner.test.ts
-├── package.json
-├── .env.example
-└── README.md
-```
-
-### 5b. GitHub Actions (Deploy)
-
-```yaml
-# .github/workflows/deploy.yml
-
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-      
-      - run: npm install
-      - run: npm test
-      - run: npm run build
-      
-      - uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-```
-
----
-
-## Seu Turno: Construa o Diet Planner
-
-### Checklist para Implementar
-
-- [ ] **Passo 1**: Clone/crie repo e escreva a especificação completa
-- [ ] **Passo 2**: Implemente DietPlannerAgent com validação
-- [ ] **Passo 3**: Crie prompts estruturados para Claude
-- [ ] **Passo 4**: Escreva testes baseados nas stories
-- [ ] **Passo 5**: Configure GitHub Actions para deploy
-- [ ] **Passo 6**: Teste com histórias reais (seu caso + 2 stories)
-- [ ] **Passo 7**: Deploy no GitHub Pages
-- [ ] **Passo 8**: Mande o link do repo!
-
-### Resources Necessários
+### Setup com Vite (como dietPlan)
 
 ```bash
-# Dependências
-npm install @anthropic-ai/sdk
-npm install -D jest @types/jest
+# Install
+npm install -D vite typescript
 
-# Variáveis de Ambiente
-ANTHROPIC_API_KEY=your_key_here
+# Build
+npm run build
+
+# Deploy via GitHub Actions (veja .github/workflows/)
+git push
 ```
 
----
-
-## Por Que BMAD Funciona?
-
-1. **Spec-First elimina ambiguidade** — Você sabe exatamente o que o agente deve fazer
-2. **Story Files = Testes automáticos** — Valida comportamento, não apenas output
-3. **Agent-as-Code é transparente** — Sem "magic", você controla tudo
-4. **Iteração clara** — Falhas na spec? Atualize e re-teste
+Seu agente estará em: `https://seu-usuario.github.io/diet-planner/`
 
 ---
 
-## Referências & Próximos Passos
+## Passo 6: Mande o Link! 
 
-**Depois de implementar:**
-- Adicionar cache de refeições (Redis)
-- Expandir para suporte a alergias específicas
-- Integrar com APIs de informação nutricional (USDA FoodData Central)
-- Adicionar feedback loop (usuário avalia plano → agente melhora)
+Quando terminar:
+1. ✅ Implementar agent seguindo spec BMAD
+2. ✅ Passar em 2+ stories
+3. ✅ Deploy no GitHub Pages
+4. ✅ **Compartilhar o link do seu repo**
 
-**Seus Resultados:**
-Quando terminar, compartilhe o link do seu repo! Vamos usar como case study real de BMAD em produção.
+Vamos usar como **case study real de BMAD em produção**! 📊
 
 ---
 
-**Commit: Pratique BMAD com Diet Planner** 🍽️ Especificação clara → Código confiável
+## Resumo: 3 Workflows
+
+| Workflow | Como Começar | Melhor Para |
+|----------|-------------|-----------|
+| **Official BMAD** | `npx bmad-method create` | Ferramenta com suporte, geração automática |
+| **Claude CLI** | `claude "create spec"` | Terminal, sem API keys, máximo controle |
+| **Spec-Only** | Ler `BMAD-dietPlan-example.md` | Aprender a metodologia |
+
+---
+
+## Checklist de Implementação
+
+- [ ] **Spec:** Criar ou usar BMAD-dietPlan-example.md
+- [ ] **Code:** Implementar agent (TypeScript + Claude)
+- [ ] **Tests:** Passar em 2+ stories
+- [ ] **Validation:** Testar contra constraints (calorias, proteína, restrições)
+- [ ] **Build:** `npm run build`
+- [ ] **Deploy:** Push para GitHub Pages
+- [ ] **Share:** Compartilhar link do repo
+
+---
+
+## Pro Tips
+
+:::tip Dica 1: Spec-First Sempre
+Gastar 20% do tempo na spec evita 80% dos problemas na implementação.
+:::
+
+:::tip Dica 2: Stories são Testes
+Cada story é um caso de teste automatizado. Use-os!
+:::
+
+:::tip Dica 3: Validate Early
+Rode validações logo nos testes. Não deixe para produção.
+:::
+
+:::warning Armadilha Comum
+Não puxa para "generalizar demais". Começa com Diet Planner concreto. Abstração vem depois.
+:::
+
+---
+
+## Referências
+
+**Official BMAD:**
+- https://www.bmadcode.com/method
+- https://www.npmjs.com/package/bmad-method
+- https://docs.bmadcode.com
+
+**Projeto Real (Referência):**
+- https://github.com/rafaelbercam/dietPlan
+- Tipos: `src/types/index.ts`
+- Serviço: `src/services/mealPlanService.ts`
+- Deploy: `npm run build:docs`
+
+**Claude API:**
+- https://anthropic.com/docs
+- Max tokens: 200K para Sonnet 5
+- Structured output support
+
+---
+
+## Próximos Posts
+
+Baseado em seus resultados reais:
+- Case study: Diet Planner em produção
+- Extensões: memória, feedback loop, fine-tuning
+- Agentes compostos: múltiplos specialized agents
+- Evals: como validar qualidade de output
+
+---
+
+**Seu turno agora!** Escolha um workflow, siga o passo-a-passo e compartilhe os resultados. 
+
+Vamos transformar BMAD-METHOD de teoria em prática, com código real rodando. 🚀
+
+**Commit: Pratique BMAD com Diet Planner - 3 workflows hands-on** 🍽️
