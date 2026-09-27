@@ -7,9 +7,9 @@ import cardImage from '@site/static/img/card.png';
 
 <ProfileCard imageUrl={cardImage} alt="Rafael Berçam - Foto de Perfil" width={1200} height={630} />
 
-**Engenheiro de Software** especializado em **SDET** (Software Development Engineer in Test), com foco em **automação escalável**, **arquitetura de agentes de IA** e **desenvolvimento full-stack**.
+**Engenheiro de Software** especializado em **SDET** (Software Development Engineer in Test), **arquitetura de agentes de IA** e **desenvolvimento full-stack**.
 
-Apaixonado por criar soluções elegantes, robustas e confiáveis que combinam qualidade de código, testabilidade e inovação tecnológica.
+Construo sistemas que você pode confiar. Qualidade de código, testes automatizados, e inovação não são separados—são a mesma coisa.
 
 ---
 
@@ -17,10 +17,10 @@ Apaixonado por criar soluções elegantes, robustas e confiáveis que combinam q
 
 Com mais de **15 anos de experiência** em desenvolvimento e QA, tenho trabalhado em:
 
-- **Automação de Testes em Escala**: Arquitetura de frameworks robustos para API, Web e Mobile
+- **Automação de Testes**: Frameworks para API, Web e Mobile que lidam com centenas de casos de teste
 - **Engenharia de Confiabilidade**: Sistemas críticos com foco em zero-falha
 - **Arquitetura de Agentes de IA**: Design e implementação de multi-agent systems com LLMs
-- **Desenvolvimento Full-Stack**: Backend robusto + Frontend moderno e responsivo
+- **Desenvolvimento Full-Stack**: Backend performático + Frontend moderno e responsivo
 
 ---
 
@@ -208,13 +208,9 @@ Mantenho-me atualizado com:
 
 ## Filosofia de Trabalho
 
-Acredito que:
+**Qualidade não é negociável.** Testes não são overhead—são confiança. Código é escrito para humanos, não para máquinas. Simplicidade vence a complexidade. Sempre.
 
-1. **Qualidade é não-negociável** — testes e boas práticas não são overhead, são investimento
-2. **Código é comunicação** — escrevo para humanos lerem, não para máquinas executarem
-3. **Simplicidade escala** — escolho soluções elegantes sobre complexas
-4. **Aprender nunca para** — a tech evolui, nós também devemos evoluir
-5. **Contribuir com comunidade** — compartilhar conhecimento multiplica impacto
+Aprendo continuamente (a tech não espera). E quando aprendo algo que funciona, compartilho—conhecimento só multiplica quando circula.
 
 ---
 

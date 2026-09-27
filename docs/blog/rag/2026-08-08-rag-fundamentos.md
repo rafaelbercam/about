@@ -10,9 +10,9 @@ authors: [rafael]
 
 *Escrito por Rafael Berçam Medeiros em 8 de Agosto de 2026*
 
-A busca por sistemas de IA mais precisos e atualizados levou ao desenvolvimento de uma técnica elegante: RAG (Retrieval-Augmented Generation). Ao combinar um modelo de linguagem com a capacidade de consultar fontes externas de conhecimento, RAG resolve dois problemas clássicos dos LLMs: alucinações (respostas fabricadas) e desatualização do conhecimento de treino.
+RAG (Retrieval-Augmented Generation) combina um modelo de linguagem com a capacidade de consultar fontes externas. Resolve dois problemas clássicos dos LLMs: alucinações (respostas fabricadas) e desatualização do conhecimento.
 
-Neste artigo, você aprenderá os conceitos fundamentais de RAG, seus padrões de implementação (desde os mais simples até os mais sofisticados), e como avaliar qual abordagem faz sentido para seu caso de uso.
+Aqui você vai aprender padrões de implementação (simples até complexos) e como escolher o certo para seu caso.
 
 ## O que é RAG?
 

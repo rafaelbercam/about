@@ -12,9 +12,9 @@ import Video from '@site/src/components/VideoPlayer';
 
 *Escrito por Rafael Berçam Medeiros em 27 de Setembro de 2026*
 
-Chega de agentes que "funcionam às vezes". BMAD-METHOD é uma abordagem **spec-first** que coloca a especificação clara no centro do desenvolvimento. 
+Chega de agentes que "funcionam às vezes". BMAD-METHOD é uma abordagem **spec-first** que coloca a especificação clara no centro do desenvolvimento.
 
-Este artigo é **100% prático**: você vai seguir um passo-a-passo real para construir um **Diet Planner** - agente que gera planos de dieta personalizados. Vou mostrar **3 workflows diferentes** para você escolher qual se adapta melhor.
+Aqui você vai construir um **Diet Planner** real—um agente que gera planos de dieta personalizados. Vou mostrar **3 workflows diferentes** para você escolher qual se adapta melhor.
 
 <!--truncate-->
 
@@ -23,8 +23,8 @@ Este artigo é **100% prático**: você vai seguir um passo-a-passo real para co
 BMAD = **Behavior-Marked Agent Development**. Princípios:
 
 1. **Spec-First**: Especificação clara antes de qualquer código
-2. **Behavior-Marked**: Comportamentos bem definidos e testáveis  
-3. **Agent-as-Code**: Lógica explícita, sem "magic"
+2. **Behavior-Marked**: Comportamentos explícitos e testáveis  
+3. **Agent-as-Code**: Lógica, sem "magic"
 4. **Story-Driven**: Testes baseados em casos de uso reais
 5. **Control Preservation**: Você controla 100% do comportamento
 
@@ -32,20 +32,15 @@ BMAD = **Behavior-Marked Agent Development**. Princípios:
 
 ## Exemplo Real: Diet Planner
 
-Vamos construir um agente que:
-- Recebe dados pessoais + preferências do usuário
-- Gera plano de dieta personalizado para 7 dias
-- Oferece **múltiplas opções** para cada refeição
-- Valida contra restrições (vegetariano, sem lactose, etc.)
-- Retorna JSON estruturado pronto para uso
+O agente recebe dados pessoais (idade, peso, objetivo) e preferências alimentares. Retorna um plano de 7 dias com múltiplas opções por refeição, respeitando restrições (vegetariano, sem lactose, etc.). Output é JSON estruturado, pronto para usar.
 
-**Base:** Projeto real https://github.com/rafaelbercam/dietPlan (Vue 3 + Vite + GitHub Pages)
+**Base:** Projeto real em https://github.com/rafaelbercam/dietPlan (Vue 3 + Vite + GitHub Pages)
 
 ---
 
 ## Passo 1: Entender a Especificação
 
-Antes de qualquer código, definimos **o que o agente deve fazer**:
+Defina **o que o agente deve fazer**:
 
 ### Inputs (O que o agente recebe)
 

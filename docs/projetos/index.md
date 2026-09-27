@@ -14,7 +14,7 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
 
 <ProjectCard
   title="Diet Planner Agent (BMAD-METHOD)"
-  description="Agente TypeScript que gera planos de dieta personalizados usando Claude API. Implementação real da metodologia BMAD (Behavior-Marked Agent Development) com validações nutricionais robustas, retry automático e múltiplas opções de refeição."
+  description="TypeScript agent that generates personalized meal plans via Claude API. Implements BMAD methodology with input validation, automatic retry logic, and multiple options per meal. Real-world case study of spec-first agent development."
   technologies={["TypeScript", "Claude API", "Agentes de IA", "BMAD-METHOD", "Node.js", "Express"]}
   githubUrl="https://github.com/rafaelbercam/new-diet-planner"
   featured={true}
@@ -28,7 +28,7 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
 
 <ProjectCard
   title="API Tests com TypeScript"
-  description="Boilerplate completo e production-ready para testes de API com foco em organização, reutilização e boas práticas. Estrutura robusta para automação escalável."
+  description="Production-ready boilerplate for API testing. Organized by concern, reusable patterns, best practices built in. Start testing in minutes, not days."
   technologies={["TypeScript", "Mocha", "Chai", "Node.js", "API Testing"]}
   githubUrl="https://github.com/rafaelbercam/api-tests-typescript"
   featured={true}
@@ -36,14 +36,14 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
 
 <ProjectCard
   title="API Tests com Kotlin + RestAssured"
-  description="Estrutura robusta para automação de APIs utilizando Kotlin, ideal para projetos escaláveis com foco em qualidade e performance. Aproveita as vantagens da JVM."
+  description="API testing framework in Kotlin. JVM performance, strong typing, and RestAssured power. Built for teams scaling test infrastructure."
   technologies={["Kotlin", "RestAssured", "JUnit", "API Testing", "JVM"]}
   githubUrl="https://github.com/rafaelbercam/APITestsKotlin"
 />
 
 <ProjectCard
   title="Testes Web com Playwright + Jest"
-  description="Projeto moderno para automação de testes E2E com foco em performance, confiabilidade e melhores práticas de QA. Performance superior e suporte multi-browser."
+  description="Modern E2E testing setup. Fast, reliable, multi-browser. Catches real user flows, not fragile selectors. Debug output included."
   technologies={["Playwright", "Jest", "TypeScript", "E2E Testing", "JavaScript"]}
   githubUrl="https://github.com/rafaelbercam/playwright-tests-jest"
 />
@@ -52,7 +52,7 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
 
 <ProjectCard
   title="Boilerplates de Testes Automatizados"
-  description="Coleção completa de templates prontos para acelerar a criação de projetos de automação. Setup para API, Web, Mobile e Performance Testing com configurações padrão."
+  description="Ready-to-use templates for API, Web, Mobile, and Performance testing. No boilerplate bloat—just what you need to start fast."
   technologies={["JavaScript", "TypeScript", "Kotlin", "Playwright", "Jest", "Mocha"]}
   githubUrl="https://github.com/rafaelbercam/boilerplates"
   featured={true}
@@ -62,7 +62,7 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
 
 <ProjectCard
   title="Portfólio Pessoal (Vue.js + Vite)"
-  description="Meu primeiro portfólio pessoal desenvolvido com tecnologias modernas. Frontend moderno com Vue.js 3 + Composition API, tema dark/light, totalmente responsivo."
+  description="My first portfolio site. Vue.js 3 + Composition API, dark/light theme, responsive. Simple and effective."
   technologies={["Vue.js 3", "TypeScript", "Vite", "Playwright", "CSS3"]}
   githubUrl="https://github.com/rafaelbercam/personalSite"
 />
@@ -82,37 +82,11 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
 
 ---
 
-## Filosofia de Projeto
+## Como Trabalho
 
-<FeatureGrid
-  columns={3}
-  features={[
-    {
-      title: "Qualidade de Código",
-      description: "SOLID, Clean Code, padrões de design bem aplicados"
-    },
-    {
-      title: "Testabilidade",
-      description: "Fácil de manter, estender e evoluir"
-    },
-    {
-      title: "Documentação",
-      description: "README claro, exemplos práticos de uso"
-    },
-    {
-      title: "Boas Práticas",
-      description: "Sigo padrões consagrados da indústria"
-    },
-    {
-      title: "Open Source",
-      description: "Compartilho conhecimento com comunidade"
-    },
-    {
-      title: "Performance",
-      description: "Otimização e escalabilidade em primeiro lugar"
-    }
-  ]}
-/>
+Código que dura precisa de testes, documentação clara, e simplicidade. Não gosto de soluções overly-engineered. Padrões de design existem para resolver problemas reais, não para soar sofisticado.
+
+Cada projeto que deixo público pode ajudar alguém resolver o mesmo problema. Por isso compartilho.
 
 ## Tecnologias Principais
 
