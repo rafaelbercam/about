@@ -86,8 +86,8 @@ const config = {
         logo: {
           alt: 'Rafael Berçam',
           src: 'img/card.png',
-          width: 90,
-          height: 45,
+          width: 110,
+          height: 55,
         },
         items: [
           {
