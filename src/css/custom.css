@@ -44,10 +44,29 @@
   --ifm-background-surface-color: #161B22;
   --ifm-navbar-background-color: #0D1117;
   --ifm-footer-background-color: #161B22;
-  --ifm-font-color-base: #E6EDF3;
-  --ifm-font-color-secondary: #8B949E;
+  --ifm-font-color-base: #F0F6FC;
+  --ifm-font-color-secondary: #C9D1D9;
   --ifm-border-color: #30363D;
   --docusaurus-highlighted-code-line-bg: rgba(9, 105, 218, 0.15);
+}
+
+/* Ensure high contrast for dark mode text */
+[data-theme='dark'] body {
+  color: #F0F6FC;
+}
+
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4,
+[data-theme='dark'] h5,
+[data-theme='dark'] h6 {
+  color: #F0F6FC;
+}
+
+[data-theme='dark'] .docusaurus-mt-lg,
+[data-theme='dark'] p {
+  color: #F0F6FC;
 }
 
 /* ============ Navbar ============ */
