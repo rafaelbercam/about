@@ -86,6 +86,11 @@ const config = {
         title: 'Rafael Berçam',
         items: [
           {
+            href: 'https://rafaelbercam.github.io/',
+            label: 'Currículo',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/rafaelbercam',
             label: 'GitHub',
             position: 'right',
