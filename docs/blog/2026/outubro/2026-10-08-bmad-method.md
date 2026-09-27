@@ -815,6 +815,27 @@ Seu agente estará em: `https://seu-usuario.github.io/diet-planner/`
 
 ---
 
+## 🎬 Aplicação Rodando: Demo ao Vivo
+
+Este é o **resultado prático** da metodologia BMAD. A aplicação recebe seus dados pessoais e retorna um plano de dieta personalizado em tempo real:
+
+<video controls width="100%" style={{maxWidth: "800px", borderRadius: "8px", marginTop: "16px"}}>
+  <source src="/img/blog/dietPlannerMovie.mov" type="video/quicktime" />
+  Seu navegador não suporta vídeo. 
+  <a href="/img/blog/dietPlannerMovie.mov">Download do vídeo</a>
+</video>
+
+### O que o Vídeo Mostra:
+
+✅ **Entrada:** Formulário com seus dados (idade, peso, altura, objetivo, restrições)  
+✅ **Processamento:** Claude API gerando plano personalizado  
+✅ **Saída:** Plano de 7 dias com múltiplas opções para cada refeição  
+✅ **Validações:** Calorias, proteína, e restrições dietéticas respeitadas  
+
+Essa é a **aplicação real** do seu BMAD Diet Planner Agent em produção! 🍽️
+
+---
+
 ## Passo 6: Mande o Link! 
 
 Quando terminar:
