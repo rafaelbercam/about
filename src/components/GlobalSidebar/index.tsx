@@ -15,17 +15,32 @@ const navItems: NavItem[] = [
     label: 'Blog',
     href: '/blog',
     children: [
-      { label: 'RAG: Fundamentos', href: '/blog/rag-fundamentos' },
-      { label: 'BMAD-METHOD', href: '/blog/bmad-method' },
-      { label: 'HIVE: Multi-Agent', href: '/blog/hive-multi-agent' },
-      { label: 'HYBRID-FLOW', href: '/blog/hybrid-flow' },
-      { label: 'Memória em Agentes', href: '/blog/memoria-agentes' },
-      { label: 'Avaliação & LLM-as-Judge', href: '/blog/avaliacao-llm' },
-      { label: 'Guia Prático: RAG + LangChain', href: '/blog/guia-rag-langchain' },
-      { label: 'RAG vs Long Context', href: '/blog/rag-vs-long-context' },
-      { label: 'Tendências 2026', href: '/blog/tendencias-ia-2026' },
-      { label: 'Troubleshooting', href: '/blog/troubleshooting-sistemas-ia' },
-      { label: 'Glossário Técnico', href: '/blog/glossario-termos-ia' },
+      {
+        label: '2026',
+        children: [
+          {
+            label: 'Setembro',
+            children: [
+              { label: 'RAG: Fundamentos', href: '/blog/rag-fundamentos' },
+              { label: 'BMAD-METHOD', href: '/blog/bmad-method' },
+              { label: 'HIVE: Multi-Agent', href: '/blog/hive-multi-agent' },
+              { label: 'HYBRID-FLOW', href: '/blog/hybrid-flow' },
+              { label: 'Memória em Agentes', href: '/blog/memoria-agentes' },
+              { label: 'Avaliação & LLM-as-Judge', href: '/blog/avaliacao-llm' },
+              { label: 'Guia Prático: RAG + LangChain', href: '/blog/guia-rag-langchain' },
+              { label: 'RAG vs Long Context', href: '/blog/rag-vs-long-context' },
+            ],
+          },
+          {
+            label: 'Outubro',
+            children: [
+              { label: 'Tendências 2026', href: '/blog/tendencias-ia-2026' },
+              { label: 'Troubleshooting', href: '/blog/troubleshooting-sistemas-ia' },
+              { label: 'Glossário Técnico', href: '/blog/glossario-termos-ia' },
+            ],
+          },
+        ],
+      },
     ],
   },
   { label: 'Projetos', href: '/projetos' },
@@ -51,6 +66,46 @@ export default function GlobalSidebar() {
     );
   };
 
+  const renderNavItem = (item: NavItem, depth: number = 0) => {
+    const uniqueKey = `${item.label}-${depth}`;
+
+    if (item.children) {
+      return (
+        <div key={uniqueKey} className={styles.navItem} style={{ marginLeft: `${depth * 12}px` }}>
+          <button
+            className={`${styles.navLink} ${isActive(item.href || '') ? styles.active : ''}`}
+            onClick={() => toggleExpand(uniqueKey)}
+          >
+            <span>{item.label}</span>
+            <span
+              className={`${styles.chevron} ${
+                expandedItems.includes(uniqueKey) ? styles.expanded : ''
+              }`}
+            >
+              ›
+            </span>
+          </button>
+          {expandedItems.includes(uniqueKey) && (
+            <div className={styles.submenu}>
+              {item.children.map((child) => renderNavItem(child, depth + 1))}
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    return (
+      <Link
+        key={uniqueKey}
+        to={item.href || ''}
+        className={`${styles.submenuLink} ${isActive(item.href || '') ? styles.active : ''}`}
+        style={{ marginLeft: `${depth * 12}px` }}
+      >
+        {item.label}
+      </Link>
+    );
+  };
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logoSection}>
@@ -60,47 +115,7 @@ export default function GlobalSidebar() {
       </div>
 
       <nav className={styles.nav}>
-        {navItems.map((item) => (
-          <div key={item.label} className={styles.navItem}>
-            {item.children ? (
-              <>
-                <button
-                  className={`${styles.navLink} ${isActive(item.href || '') ? styles.active : ''}`}
-                  onClick={() => toggleExpand(item.label)}
-                >
-                  <span>{item.label}</span>
-                  <span
-                    className={`${styles.chevron} ${
-                      expandedItems.includes(item.label) ? styles.expanded : ''
-                    }`}
-                  >
-                    ›
-                  </span>
-                </button>
-                {expandedItems.includes(item.label) && (
-                  <div className={styles.submenu}>
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.href}
-                        to={child.href || ''}
-                        className={`${styles.submenuLink} ${isActive(child.href || '') ? styles.active : ''}`}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </>
-            ) : (
-              <Link
-                to={item.href || ''}
-                className={`${styles.navLink} ${isActive(item.href || '') ? styles.active : ''}`}
-              >
-                {item.label}
-              </Link>
-            )}
-          </div>
-        ))}
+        {navItems.map((item) => renderNavItem(item, 0))}
       </nav>
     </aside>
   );
