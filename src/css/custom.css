@@ -4,52 +4,335 @@
  * work well for content-centric websites.
  */
 
-/* Blue dark palette for Rafael Bercam's portfolio */
+/* Import Google Fonts - Professional serif for blog */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* Professional color scheme - inspired by Stripe, GitHub Docs */
 :root {
-  --ifm-color-primary: #3E7BFA;
-  --ifm-color-primary-dark: #3366E8;
-  --ifm-color-primary-darker: #2D5AD6;
-  --ifm-color-primary-darkest: #1F3FA3;
-  --ifm-color-primary-light: #5B95FF;
-  --ifm-color-primary-lighter: #7CB3FF;
-  --ifm-color-primary-lightest: #A3CEFF;
-  --ifm-background-color: #0A1024;
-  --ifm-background-surface-color: #101B36;
-  --ifm-navbar-background-color: #0F1A30;
-  --ifm-footer-background-color: #0F1A30;
+  /* Primary colors - Professional Blue */
+  --ifm-color-primary: #0969DA;
+  --ifm-color-primary-dark: #033D8B;
+  --ifm-color-primary-darker: #0860CA;
+  --ifm-color-primary-darkest: #033D8B;
+  --ifm-color-primary-light: #54AEFF;
+  --ifm-color-primary-lighter: #79C0FF;
+  --ifm-color-primary-lightest: #BFD4F2;
+
+  /* Background - Clean white with subtle grays */
+  --ifm-background-color: #FFFFFF;
+  --ifm-background-surface-color: #F6F8FA;
+
+  /* Navbar - Professional light gray */
+  --ifm-navbar-background-color: #F6F8FA;
+  --ifm-footer-background-color: #F6F8FA;
+
+  /* Sidebar - Slightly darker but still clean */
+  --ifm-sidebar-background-color: #F6F8FA;
+
+  /* Text colors */
+  --ifm-font-color-base: #24292F;
+  --ifm-font-color-secondary: #656D76;
+
+  /* Typography */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-font-family-monospace: 'Courier New', monospace;
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(62, 123, 250, 0.15);
+  --docusaurus-highlighted-code-line-bg: rgba(9, 105, 218, 0.08);
+
+  /* Shadows and borders */
+  --ifm-navbar-shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
+  --ifm-border-color: #D8DEE4;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #5B95FF;
-  --ifm-color-primary-dark: #3E7BFA;
-  --ifm-color-primary-darker: #3366E8;
-  --ifm-color-primary-darkest: #2D5AD6;
-  --ifm-color-primary-light: #7CB3FF;
-  --ifm-color-primary-lighter: #A3CEFF;
-  --ifm-color-primary-lightest: #C0D9FF;
-  --ifm-background-color: #0A1024;
-  --ifm-background-surface-color: #101B36;
-  --ifm-navbar-background-color: #0F1A30;
-  --ifm-footer-background-color: #0F1A30;
-  --docusaurus-highlighted-code-line-bg: rgba(91, 149, 255, 0.15);
+/* ============ Typography ============ */
+
+/* Blog content with serif font */
+.blog-title,
+.blog h1,
+.blog h2,
+.blog h3,
+article h1,
+article h2,
+article h3,
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+  font-family: 'Merriweather', serif;
+  color: #24292F;
+  font-weight: 700;
 }
 
-/* Sidebar layout adjustment */
-.navbar-wrapper {
+article,
+.markdown,
+.markdown p {
+  font-family: 'Merriweather', serif;
+  line-height: 1.8;
+  color: #24292F;
+}
+
+article code,
+article pre,
+.markdown code,
+.markdown pre {
+  font-family: 'Courier New', monospace;
+  background-color: #F6F8FA;
+}
+
+/* ============ Navbar ============ */
+
+.navbar {
+  background-color: #F6F8FA;
+  border-bottom: 1px solid #D8DEE4;
+  box-shadow: var(--ifm-navbar-shadow);
+}
+
+.navbar__title {
+  color: #24292F;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.navbar__logo img {
+  height: 32px;
+}
+
+.navbar__link {
+  color: #656D76;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.navbar__link:hover {
+  color: #0969DA;
+}
+
+.navbar__link--active {
+  color: #0969DA;
+  border-bottom: 2px solid #0969DA;
+}
+
+/* ============ Sidebar ============ */
+
+.sidebar-container {
+  background-color: #F6F8FA;
+}
+
+.menu {
+  padding: 0.5rem 0;
+}
+
+.menu__list {
+  list-style: none;
   padding-left: 0;
 }
+
+.menu__list-item {
+  margin: 0;
+}
+
+.menu__link {
+  color: #656D76;
+  padding: 0.5rem 1rem;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background-color: #EAEEF2;
+  color: #0969DA;
+}
+
+.menu__link--active {
+  background-color: #EAEEF2;
+  border-left-color: #0969DA;
+  color: #0969DA;
+  font-weight: 600;
+}
+
+.menu__list-item-collapsible .menu__link--sublist::after {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="currentColor" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06L7.28 12.78a.75.75 0 01-1.06-1.06L10.44 8 6.22 4.28a.75.75 0 010-1.06z"/></svg>');
+}
+
+/* ============ Footer ============ */
+
+.footer {
+  background-color: #F6F8FA;
+  border-top: 1px solid #D8DEE4;
+  color: #656D76;
+}
+
+.footer__link-item {
+  color: #0969DA;
+}
+
+.footer__link-item:hover {
+  text-decoration: underline;
+}
+
+/* ============ Main Content ============ */
 
 .main-wrapper {
   margin-left: 0;
   display: flex;
   flex-direction: row;
+  background-color: #FFFFFF;
 }
 
 @media (min-width: 997px) {
   .main-wrapper {
     margin-left: 240px;
   }
+}
+
+/* ============ Documentation ============ */
+
+.docusaurus-mt-lg {
+  margin-top: 2rem;
+}
+
+.table-of-contents {
+  border-left: 2px solid #D8DEE4;
+  padding-left: 1rem;
+}
+
+.table-of-contents__link {
+  color: #656D76;
+}
+
+.table-of-contents__link--active {
+  color: #0969DA;
+  font-weight: 600;
+}
+
+/* ============ Blog Styling ============ */
+
+.blog-list__item {
+  background-color: #FFFFFF;
+  border: 1px solid #D8DEE4;
+  border-radius: 6px;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.blog-list__item:hover {
+  border-color: #0969DA;
+  box-shadow: 0 3px 12px rgba(9, 105, 218, 0.12);
+}
+
+.blog-list__item-title {
+  color: #24292F;
+  font-family: 'Merriweather', serif;
+  font-size: 1.25rem;
+}
+
+.blog-post {
+  background-color: #FFFFFF;
+  color: #24292F;
+}
+
+.blog-post__header {
+  border-bottom: 1px solid #D8DEE4;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+}
+
+.blog-post__title {
+  font-family: 'Merriweather', serif;
+  color: #24292F;
+}
+
+/* ============ Code Blocks ============ */
+
+code {
+  background-color: #F6F8FA;
+  border-radius: 3px;
+  padding: 2px 6px;
+  color: #24292F;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: #F6F8FA;
+  border: 1px solid #D8DEE4;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+/* ============ Buttons & Links ============ */
+
+.button {
+  font-weight: 600;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.button--primary {
+  background-color: #0969DA;
+  color: #FFFFFF;
+}
+
+.button--primary:hover {
+  background-color: #033D8B;
+  box-shadow: 0 3px 12px rgba(9, 105, 218, 0.3);
+}
+
+.button--secondary {
+  background-color: #F6F8FA;
+  border: 1px solid #D8DEE4;
+  color: #0969DA;
+}
+
+.button--secondary:hover {
+  background-color: #EAEEF2;
+  border-color: #0969DA;
+}
+
+a {
+  color: #0969DA;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============ Tags & Badges ============ */
+
+.badge {
+  background-color: #F0F6FC;
+  color: #0969DA;
+  border: 1px solid #D8DEE4;
+  border-radius: 12px;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.badge:hover {
+  background-color: #E9F3FF;
+  border-color: #0969DA;
+}
+
+/* ============ Pagination ============ */
+
+.pagination-nav__link {
+  background-color: #F6F8FA;
+  border: 1px solid #D8DEE4;
+  color: #0969DA;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+  background-color: #EAEEF2;
+  border-color: #0969DA;
+  box-shadow: 0 1px 6px rgba(9, 105, 218, 0.12);
+}
+
+/* ============ Search ============ */
+
+.DocSearch {
+  --docsearch-primary-color: #0969DA;
 }
