@@ -13,18 +13,21 @@
 }
 
 .logoSection {
-  padding: 1.5rem 1rem;
+  padding: 2rem 1.5rem;
   border-bottom: 1px solid #D8DEE4;
   flex-shrink: 0;
 }
 
 .logo {
   display: block;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0969DA;
   text-decoration: none;
   transition: color 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  letter-spacing: -0.5px;
+  line-height: 1.3;
 }
 
 .logo:hover {
