@@ -84,6 +84,12 @@ const config = {
       },
       navbar: {
         title: 'Rafael Berçam',
+        logo: {
+          alt: 'Rafael Berçam',
+          src: 'img/card.png',
+          width: 40,
+          height: 40,
+        },
         items: [
           {
             href: 'https://rafaelbercam.github.io/',
