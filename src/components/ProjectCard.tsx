@@ -4,7 +4,7 @@ import styles from './ProjectCard.module.css';
 interface ProjectCardProps {
   title: string;
   description: string;
-  technologies: string[];
+  technologies?: string[];
   githubUrl: string;
   videoUrl?: string;
   featured?: boolean;
@@ -13,7 +13,7 @@ interface ProjectCardProps {
 export default function ProjectCard({
   title,
   description,
-  technologies,
+  technologies = [],
   githubUrl,
   videoUrl,
   featured = false,
@@ -27,13 +27,15 @@ export default function ProjectCard({
 
       <p className={styles.description}>{description}</p>
 
-      <div className={styles.technologies}>
-        {technologies.map((tech) => (
-          <span key={tech} className={styles.tech}>
-            {tech}
-          </span>
-        ))}
-      </div>
+      {technologies.length > 0 && (
+        <div className={styles.technologies}>
+          {technologies.map((tech) => (
+            <span key={tech} className={styles.tech}>
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
 
       <div className={styles.footer}>
         <a href={githubUrl} target="_blank" rel="noopener noreferrer" className={styles.link}>
