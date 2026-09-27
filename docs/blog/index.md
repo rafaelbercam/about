@@ -20,43 +20,66 @@ Artigos técnicos e insights sobre desenvolvimento de software, arquitetura de s
 
 ---
 
-## Artigos por Data
+## Artigos por Assunto
 
-### Setembro 2026 — Fundamentos & Conceitos
+### 🤖 Agentes de IA
 
-**1. [RAG: Fundamentos e Padrões de Arquitetura](/docs/blog/2026/setembro/rag-fundamentos)** *(05/09)*
-Retrieval-Augmented Generation: como combinar LLMs com conhecimento externo. Aprenda desde o conceito básico até padrões avançados de RAG.
+Metodologias e arquiteturas de desenvolvimento de agentes inteligentes.
 
-**2. [BMAD-METHOD: Desenvolvimento Dirigido por Especificação](/docs/blog/2026/setembro/bmad-method)** *(08/09)*
-Metodologia estruturada para desenvolvimento de agentes confiáveis. Como colocar a especificação clara no centro do seu projeto.
+**1. [BMAD-METHOD: Desenvolvimento Dirigido por Especificação](/docs/blog/agentes-ia/bmad-method)** *(27/09/2026)*
+Metodologia estruturada para desenvolvimento de agentes confiáveis. Spec-first approach com casos de uso reais (Diet Planner Agent).
 
-**3. [HIVE: Infraestrutura de Escalamento Multi-Agente](/docs/blog/2026/setembro/hive-multi-agent)** *(12/09)*
+**2. [HIVE: Infraestrutura de Escalamento Multi-Agente](/docs/blog/agentes-ia/hive-multi-agent)** *(15/08/2026)*
 Otimizações inteligentes para sistemas com múltiplos agentes. Orquestração eficiente e cache de logits entre agentes.
 
-**4. [HYBRID-FLOW: Reativo + Deliberativo](/docs/blog/2026/setembro/hybrid-flow)** *(15/09)*
-Combinando ação imediata com planejamento cuidadoso em arquiteturas de agentes. O melhor dos dois mundos.
+---
 
-**5. [Memória em Agentes de IA](/docs/blog/2026/setembro/memoria-agentes)** *(19/09)*
-Arquiteturas de contexto persistente para agentes inteligentes. Memória de curto prazo, longo prazo e estruturada.
+### 📚 RAG (Retrieval-Augmented Generation)
 
-### Outubro 2026 — Implementação & Avançado
+Técnicas e padrões para aumentar LLMs com conhecimento externo.
 
-**6. [Avaliação de Sistemas de IA: LLM-as-Judge](/docs/blog/2026/outubro/avaliacao-llm)** *(02/10)*
-De BLEU/ROUGE até avaliação automática com modelos de linguagem. Como medir qualidade em produção.
+**3. [RAG: Fundamentos e Padrões de Arquitetura](/docs/blog/rag/rag-fundamentos)** *(08/08/2026)*
+Retrieval-Augmented Generation: como combinar LLMs com conhecimento externo. Desde conceitos básicos até padrões avançados.
 
-**7. [Guia Prático: Implementar RAG com LangChain](/docs/blog/2026/outubro/guia-rag-langchain)** *(08/10)*
-Passo-a-passo para construir um sistema RAG profissional em 30 minutos. Com código completo e melhorias.
+**4. [Guia Prático: Implementar RAG com LangChain](/docs/blog/rag/guia-rag-langchain)** *(22/08/2026)*
+Passo-a-passo para construir um sistema RAG profissional em 30 minutos. Com código completo e melhorias práticas.
 
-**8. [RAG vs Long Context: Qual Escolher?](/docs/blog/2026/outubro/rag-vs-long-context)** *(15/10)*
+**5. [RAG vs Long Context: Qual Escolher?](/docs/blog/rag/rag-vs-long-context)** *(29/08/2026)*
 Análise profunda das duas abordagens com matriz de decisão, benchmarks e casos de uso reais.
 
-**9. [Tendências de IA em 2026: Papers e Releases](/docs/blog/2026/outubro/tendencias-ia-2026)** *(22/10)*
+---
+
+### 🏗️ Arquitetura de Agentes
+
+Padrões avançados de design e implementação de sistemas agentic.
+
+**6. [HYBRID-FLOW: Reativo + Deliberativo](/docs/blog/arquitetura/hybrid-flow)** *(18/08/2026)*
+Combinando ação imediata com planejamento cuidadoso em arquiteturas de agentes. O melhor dos dois mundos.
+
+**7. [Memória em Agentes de IA](/docs/blog/arquitetura/memoria-agentes)** *(25/08/2026)*
+Arquiteturas de contexto persistente para agentes inteligentes. Memória de curto prazo, longo prazo e estruturada.
+
+---
+
+### 🛠️ Práticas e Ferramentas
+
+Técnicas operacionais e troubleshooting para sistemas de IA em produção.
+
+**8. [Avaliação de Sistemas de IA: LLM-as-Judge](/docs/blog/praticas/avaliacao-llm)** *(01/08/2026)*
+De BLEU/ROUGE até avaliação automática com modelos de linguagem. Como medir qualidade em produção.
+
+**9. [Tendências de IA em 2026: Papers e Releases](/docs/blog/praticas/tendencias-ia-2026)** *(01/09/2026)*
 O que mudou em 2026. Papers impactantes, releases de modelos e shifts no mercado.
 
-**10. [Troubleshooting: 10 Problemas Comuns em Sistemas de IA](/docs/blog/2026/outubro/troubleshooting-sistemas-ia)** *(28/10)*
+**10. [Troubleshooting: Problemas Comuns em Sistemas de IA](/docs/blog/praticas/troubleshooting-ia)** *(10/09/2026)*
 Checklist prático com soluções para alucinações, latência, acurácia, RAG quebrado e muito mais.
 
-### Referência & Glossário
+**11. [Claude + Devin Cheatsheet: Comandos de Otimização](/docs/blog/praticas/claude-devin-cheatsheet)** *(15/09/2026)*
+Guia rápido de comandos e prompts para otimizar o uso do Claude e Devin em workflows profissionais.
+
+---
+
+### 📖 Referência
 
 **[Glossário: Termos Técnicos de IA Explicados](/docs/blog/glossario-termos-ia)**
 50+ termos técnicos descodificados em português. De Agentic Flow até Zero-Shot Learning.
@@ -65,60 +88,45 @@ Checklist prático com soluções para alucinações, latência, acurácia, RAG 
 
 ## Índice Temático
 
-### Por Tema
+### Começar por Aqui
 
-**RAG (Retrieval-Augmented Generation)**
-- [RAG: Fundamentos](/docs/blog/2026/setembro/rag-fundamentos)
-- [RAG vs Long Context](/docs/blog/2026/outubro/rag-vs-long-context)
-- [Guia Prático: RAG + LangChain](/docs/blog/2026/outubro/guia-rag-langchain)
+**Novo em IA/Agentes?**
+- [RAG: Fundamentos](/docs/blog/rag/rag-fundamentos) — Conceitos básicos
+- [BMAD-METHOD](/docs/blog/agentes-ia/bmad-method) — Metodologia estruturada
 
-**Metodologia & Arquitetura**
-- [BMAD-METHOD](/docs/blog/2026/setembro/bmad-method)
-- [HIVE: Multi-Agent](/docs/blog/2026/setembro/hive-multi-agent)
-- [HYBRID-FLOW](/docs/blog/2026/setembro/hybrid-flow)
+**Quer implementar algo?**
+- [Guia RAG + LangChain](/docs/blog/rag/guia-rag-langchain) — Pronto para usar
+- [Troubleshooting](/docs/blog/praticas/troubleshooting-ia) — Resolver problemas
 
-**Sistemas & Operações**
-- [Memória em Agentes](/docs/blog/2026/setembro/memoria-agentes)
-- [Avaliação de Sistemas de IA](/docs/blog/2026/outubro/avaliacao-llm)
-- [Troubleshooting](/docs/blog/2026/outubro/troubleshooting-sistemas-ia)
+**Resolvendo um problema específico?**
+- [RAG vs Long Context](/docs/blog/rag/rag-vs-long-context) — Escolher a abordagem
+- [Avaliação de Sistemas](/docs/blog/praticas/avaliacao-llm) — Medir qualidade
 
-**Tendências & Mercado**
-- [Tendências 2026](/docs/blog/2026/outubro/tendencias-ia-2026)
+**Não entende um termo?**
+- [Glossário](/docs/blog/glossario-termos-ia)
 
-### Por Tipo
+---
 
-**Fundamentos** — RAG, BMAD-METHOD, HIVE, HYBRID-FLOW, Memória, Avaliação
+## Estrutura de Conteúdo
 
-**Guias Práticos** — Guia RAG + LangChain, Troubleshooting
+| Categoria | Artigos | Foco |
+|-----------|---------|------|
+| **Agentes de IA** | 2 | Metodologia, orquestração |
+| **RAG** | 3 | Fundamentos, implementação, comparação |
+| **Arquitetura** | 2 | Padrões avançados, memória |
+| **Práticas** | 4 | Operações, troubleshooting, tendências |
+| **Referência** | 1 | Glossário técnico |
 
-**Análises** — RAG vs Long Context, Tendências 2026
+---
 
-**Referência** — Glossário
+## Cronograma de Publicação
+
+- **Agosto 2026** — Fundamentos técnicos (RAG, Arquitetura, Avaliação)
+- **Setembro 2026** — Metodologia e Implementação (BMAD, Troubleshooting, Cheatsheet)
+- **Atualizado continuamente** com insights e novas descobertas
 
 ---
 
 ## Como Navegar
 
-1. **Novo em IA/Agentes?** Comece por [RAG: Fundamentos](/docs/blog/2026/setembro/rag-fundamentos)
-
-2. **Quer implementar RAG?** Vá direto para [Guia Prático: RAG + LangChain](/docs/blog/2026/outubro/guia-rag-langchain)
-
-3. **Resolvendo um problema?** Procure em [Troubleshooting](/docs/blog/2026/outubro/troubleshooting-sistemas-ia)
-
-4. **Não entende um termo?** Consulte o [Glossário](/docs/blog/glossario-termos-ia)
-
-5. **Quer saber o que mudou?** Leia [Tendências 2026](/docs/blog/2026/outubro/tendencias-ia-2026)
-
----
-
-## Estatísticas
-
-- **10 artigos técnicos** sobre IA e engenharia de software
-- **2 guias práticos** com código
-- **50+ termos** explicados no glossário
-- **~20.000 palavras** de conteúdo aprofundado
-- Atualizado em **2026**
-
----
-
-Use o menu lateral para explorar os artigos por data ou volte aqui para pesquisar por tema.
+Use o menu lateral para explorar os artigos por categoria, ou comece por um dos temas acima!
