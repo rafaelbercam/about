@@ -41,11 +41,6 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        search: {
-          local: {
-            hashed: true,
-          },
-        },
       }),
     ],
   ],
@@ -63,6 +58,13 @@ const config = {
         trackingID: 'G-XXXXXXXXXX', // Substituir pelo seu ID do GA4
         anonymizeIP: true,
       },
+    ],
+    [
+      '@easyops-cn/docusaurus-search-local',
+      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
+      ({
+        hashed: true,
+      }),
     ],
   ],
 
