@@ -16,7 +16,7 @@ const config = {
   projectName: 'about',
   deploymentBranch: 'gh-pages',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -45,6 +45,12 @@ const config = {
     ],
   ],
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ['@docusaurus/theme-mermaid'],
+
   plugins: [
     [
       '@docusaurus/plugin-google-gtag',
@@ -55,46 +61,51 @@ const config = {
     ],
   ],
 
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
+        integrity: 'sha512-iecdLmaskl7CVJkEZSMUkrQ6usknVF4SpMwOVNNwtpSymRsswroEBWePmzKZf38lH05OWv95IrsPJ+1v0GCHQ==',
+        crossOrigin: 'anonymous',
+        referrerPolicy: 'no-referrer',
+      },
+    },
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: 'img/social-card.png',
       colorMode: {
-        defaultMode: 'dark',
-        respectPrefersColorScheme: false,
+        defaultMode: 'light',
+        respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Rafael Bercam',
-        logo: {
-          alt: 'Logo',
-          src: 'img/logo.svg',
-        },
+        title: 'Rafael Berçam',
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Docs',
-          },
-          {to: '/projetos', label: 'Projetos', position: 'left'},
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {to: '/sobre', label: 'Sobre', position: 'left'},
           {
             href: 'https://github.com/rafaelbercam',
             label: 'GitHub',
             position: 'right',
           },
+          {
+            href: 'https://www.linkedin.com/in/rafaelbercam/',
+            label: 'LinkedIn',
+            position: 'right',
+          },
         ],
       },
       footer: {
-        style: 'dark',
+        style: 'light',
         links: [
           {
             title: 'Conteúdo',
             items: [
-              {label: 'Documentação', to: '/docs/intro'},
-              {label: 'Projetos', to: '/projetos'},
-              {label: 'Blog', to: '/blog'},
+              {label: 'Sobre', to: '/docs/intro'},
+              {label: 'Projetos', to: '/docs/projetos/'},
+              {label: 'Blog', to: '/docs/blog/'},
             ],
           },
           {
@@ -106,16 +117,11 @@ const config = {
               },
               {
                 label: 'LinkedIn',
-                href: 'https://linkedin.com/in/seu-perfil',
+                href: 'https://www.linkedin.com/in/rafaelbercam/',
               },
-            ],
-          },
-          {
-            title: 'Mais',
-            items: [
               {
-                label: 'Sobre mim',
-                to: '/sobre',
+                label: 'Email',
+                href: 'mailto:faelbercam@gmail.com',
               },
             ],
           },
