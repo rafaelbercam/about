@@ -9,13 +9,13 @@ export default function AboutContent(): JSX.Element {
         <section className={styles.section}>
           <h2>Quem Sou</h2>
           <p>
-            Olá! Meu nome é Rafael Bercam. Sou um desenvolvedor de software apaixonado por criar
-            soluções elegantes e robustas para problemas complexos.
+            Olá! Meu nome é Rafael Bercam. Sou Engenheiro de Software especializado em SDET (Software Development Engineer in Test),
+            apaixonado por criar soluções elegantes, robustas e confiáveis para problemas complexos.
           </p>
           <p>
-            Com experiência em desenvolvimento full-stack, tenho atuado em projetos que variam desde
-            aplicações web modernas até sistemas backend escaláveis. Minha abordagem combina boas
-            práticas de engenharia de software, atenção aos detalhes e foco na experiência do usuário.
+            Com experiência em desenvolvimento full-stack e automação de testes em escala, tenho atuado em projetos que variam desde
+            aplicações web modernas até sistemas backend escaláveis com qualidade garantida. Minha abordagem combina boas
+            práticas de engenharia de software, testes automatizados de alto nível, atenção aos detalhes e foco em confiabilidade.
           </p>
         </section>
 
@@ -25,10 +25,11 @@ export default function AboutContent(): JSX.Element {
             Tenho experiência com diversas tecnologias e linguagens de programação:
           </p>
           <ul>
+            <li><strong>SDET/QA Automation:</strong> Frameworks de teste, automação end-to-end, testes de API, CI/CD pipelines</li>
             <li><strong>Frontend:</strong> React, TypeScript, Next.js, CSS/SCSS, HTML5</li>
             <li><strong>Backend:</strong> Node.js, Python, Go, PostgreSQL, MongoDB</li>
             <li><strong>DevOps/Infra:</strong> Docker, Kubernetes, GitHub Actions, CI/CD</li>
-            <li><strong>Outros:</strong> Git, REST APIs, GraphQL, Testes Automatizados</li>
+            <li><strong>Outros:</strong> Git, REST APIs, GraphQL, Testes Automatizados, Engenharia de Confiabilidade</li>
           </ul>
         </section>
 
@@ -54,10 +55,10 @@ export default function AboutContent(): JSX.Element {
             <a href="https://github.com/rafaelbercam" target="_blank" rel="noopener noreferrer">
               GitHub
             </a>
-            <a href="https://linkedin.com/in/seu-perfil" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/rafaelbercam/" target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href="mailto:seu-email@example.com">
+            <a href="mailto:faelbercam@gmail.com">
               Email
             </a>
           </div>
