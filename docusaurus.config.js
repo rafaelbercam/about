@@ -41,6 +41,11 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        search: {
+          local: {
+            hashed: true,
+          },
+        },
       }),
     ],
   ],
@@ -144,16 +149,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-
-  plugins: [
-    [
-      '@easyops-cn/docusaurus-search-local',
-      {
-        hashed: true,
-        language: ['pt-br'],
-      },
-    ],
-  ],
 };
 
 module.exports = config;
