@@ -146,4 +146,4 @@ Quer conversar sobre algum projeto? Tenho interesse em colaborações e feedback
 
 ---
 
-**Última atualização:** 2026 • Desenvolvido com Docusaurus
+**Última atualização:** 2026

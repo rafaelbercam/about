@@ -227,4 +227,4 @@ Estou sempre aberto a conversas sobre desenvolvimento, arquitetura, automação,
 
 ---
 
-**Última atualização:** 2026 • Desenvolvido com Docusaurus
+**Última atualização:** 2026
