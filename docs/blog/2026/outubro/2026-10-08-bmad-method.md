@@ -522,7 +522,9 @@ Contém:
 
 ---
 
-## Exemplo Real: Passo 1 Executado
+## Exemplo Real: Execução BMAD (Passos 1-2)
+
+### Passo 1 ✅ Executado
 
 Quando você invoca a skill com o briefing, o BMAD analisa e retorna:
 
@@ -549,7 +551,37 @@ Now I'll create the necessary directories and proceed to Step 2 (planning).
 
 ---
 
-## Próximos Passos BMAD (Esperados)
+### Passo 2 ✅ Planning Complete
+
+BMAD analisou a spec e identificou 2 questões de design:
+
+**Decisão 1: Validação de Entrada**
+```
+❓ How strict should input validation be?
+✅ Escolha: Option B - Validar ranges realistas
+   - Idade: 18–80 anos
+   - Peso: 50–200 kg
+   - Height: 100–250 cm
+   
+Motivo: Production-ready, previne bugs silenciosos
+```
+
+**Decisão 2: Tratamento de Erros da API**
+```
+❓ How should Claude API errors be handled?
+✅ Escolha: Option A - Retry automático com exponential backoff
+   - 3 tentativas
+   - Backoff: 1s → 2s → 4s
+   - Robusto para rate limits
+   
+Motivo: Melhor para produção, handles transient failures
+```
+
+Spec pronto em: `_bmad-output/implementation-artifacts/spec-diet-planner-agent.md`
+
+---
+
+## Próximos Passos BMAD (Continuando)
 
 Após Step 1, o BMAD vai:
 
