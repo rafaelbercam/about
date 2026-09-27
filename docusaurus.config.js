@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'Rafael Bercam',
   tagline: 'Desenvolvedor de software | Engenharia, arquitetura e boas práticas',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon-512.png',
 
   url: 'https://rafaelbercam.github.io',
   baseUrl: '/about/',
