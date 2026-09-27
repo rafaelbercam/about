@@ -6,6 +6,8 @@ tags: [hive, agentes, orquestração, escalamento]
 authors: [rafael]
 ---
 
+import hiveOutput from '@site/static/img/blog/prompt-saida-hive-workers.png';
+
 # HIVE: Infraestrutura de Escalamento para Sistemas Multi-Agente
 
 *Escrito por Rafael Berçam Medeiros em 15 de Agosto de 2026*
@@ -29,7 +31,7 @@ graph TD
 
 ### Output Real do Sistema HIVE
 
-![HIVE Multi-Agent Output](/img/blog/prompt-saida-hive-workers.png)
+<img src={hiveOutput} alt="HIVE Multi-Agent Output" style={{maxWidth: '100%', height: 'auto'}} />
 
 *Exemplo real de execução: Queen decompõe query complexa em 5 subtarefas, workers executam em paralelo (~50s), resultado final agregado pela Queen.*
 
