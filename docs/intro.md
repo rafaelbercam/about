@@ -3,8 +3,9 @@ sidebar_position: 1
 ---
 
 import ProfileCard from '@site/src/components/ProfileCard';
+import cardImage from '@site/static/img/card.png';
 
-<ProfileCard imageUrl="/about/img/card.png" alt="Rafael Berçam - Foto de Perfil" />
+<ProfileCard imageUrl={cardImage} alt="Rafael Berçam - Foto de Perfil" />
 
 **Engenheiro de Software** especializado em **SDET** (Software Development Engineer in Test), com foco em **automação escalável**, **arquitetura de agentes de IA** e **desenvolvimento full-stack**.
 
