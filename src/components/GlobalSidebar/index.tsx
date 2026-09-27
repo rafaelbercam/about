@@ -25,14 +25,6 @@ const navItems: NavItem[] = [
   },
   { label: 'Projetos', href: '/projetos' },
   { label: 'Sobre', href: '/sobre' },
-  {
-    label: 'Documentação',
-    href: '/docs/intro',
-    children: [
-      { label: 'Introdução', href: '/docs/intro' },
-      { label: 'Projeto Exemplo', href: '/docs/projeto-exemplo' },
-    ],
-  },
 ];
 
 export default function GlobalSidebar() {
