@@ -83,6 +83,21 @@ Worker Agents: Executam subtarefas
 Ledger: Histórico compartilhado
 ```
 
+#### Exemplo Prático: Queen & Workers em Ação
+
+<!-- TODO: Inserir implementação prática do padrão Queen & Workers com:
+- Code funcional (Python + Claude API)
+- Exemplo de query complexa que requer múltiplos workers
+- Logs mostrando decomposição de tarefas
+- Métricas: latência, distribuição de carga, economia de tokens
+- Comparação antes/depois (1 agente vs. múltiplos agentes)
+- Output final agregado
+Referência: ver projeto de implementação HIVE -->
+
+```python
+# TODO: Código de exemplo do orquestrador
+```
+
 ### 3. Beehive Pattern
 
 Analogia com abelhas:
@@ -95,6 +110,29 @@ Analogia com abelhas:
 - Paper recente (ArXiv 2604.17353) ganhou visibilidade
 - 43K+ GitHub stars em repositórios que usam HIVE
 - Integrações com LangGraph, Mem0
+
+## Implementação Prática
+
+<!-- TODO: Adicionar após conclusão do projeto HIVE:
+1. **Case Study Completo**
+   - Descrição do problema resolvido
+   - Arquitetura implementada
+   - Resultados e métricas
+
+2. **Benchmarks**
+   - Comparação de latência (1 agente vs. múltiplos)
+   - Economia de tokens com Logits Cache
+   - Distribuição de carga entre workers
+
+3. **Lições Aprendidas**
+   - Desafios encontrados
+   - Trade-offs entre complexidade e benefício
+   - Recomendações para different use cases
+
+4. **Código Aberto**
+   - Link para repositório com implementação
+   - Setup e instruções de uso
+   - Exemplos de uso ready-to-run -->
 
 ## Conclusão
 
