@@ -44,6 +44,18 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
   featured={true}
 />
 
+## Agentes de IA
+
+<ProjectCard
+  title="Diet Planner Agent (BMAD-METHOD)"
+  description="Agente TypeScript que gera planos de dieta personalizados usando Claude API. Implementação real da metodologia BMAD (Behavior-Marked Agent Development) com validações nutricionais robustas, retry automático e múltiplas opções de refeição."
+  technologies={["TypeScript", "Claude API", "Agentes de IA", "BMAD-METHOD", "Node.js", "Express"]}
+  githubUrl="https://github.com/rafaelbercam/new-diet-planner"
+  featured={true}
+/>
+
+[Leia o case study completo no blog](/about/blog/bmad-method)
+
 ## Portfólio Digital
 
 <ProjectCard
