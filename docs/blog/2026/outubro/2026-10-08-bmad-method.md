@@ -843,15 +843,137 @@ Essa é a **aplicação real** do seu BMAD Diet Planner Agent em produção! �
 
 ---
 
+---
+
+## 🔑 Configurando a Secret API da Anthropic
+
+Para rodar o Diet Planner Agent, você precisa de uma **chave API válida** da Anthropic. Siga os passos:
+
+### Passo 1: Obter sua ANTHROPIC_API_KEY
+
+1. Acesse https://console.anthropic.com/
+2. Login com sua conta (ou crie uma)
+3. Clique em **"API Keys"** no menu lateral
+4. Clique em **"Create Key"**
+5. Copie a chave gerada (ela aparece UMA VEZ)
+6. **Guarde em local seguro** - não compartilhe!
+
+### Passo 2: Configurar no Projeto
+
+No repositório `new-diet-planner`, crie o arquivo `.env`:
+
+```bash
+# Copiar o template
+cp .env.example .env
+
+# Editar .env
+nano .env  # ou seu editor favorito
+```
+
+**Conteúdo do `.env`:**
+```
+ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxx
+PORT=3000
+```
+
+**Importante:**
+- ⚠️ NUNCA commite o `.env` (já está em `.gitignore`)
+- ⚠️ NUNCA compartilhe sua API key
+- ✅ Cada usuário tem sua própria chave
+
+### Passo 3: Testar a Conexão
+
+```bash
+# Instalar dependências
+npm install
+
+# Rodar exemplo de teste
+npx ts-node example.ts
+```
+
+Se vir saída com dados nutricionais, a API está conectada! ✅
+
+---
+
+## Rodando o Diet Planner Agent
+
+### Opção A: Como Script (Rápido)
+
+```bash
+# Executa os exemplos (exemplo.ts)
+npx ts-node example.ts
+```
+
+Mostra 3 casos reais:
+1. Perda de Peso (32 anos, 85kg)
+2. Ganho Muscular Vegetariano (28 anos, 65kg)
+3. Múltiplas Restrições (35 anos, 75kg, sem lactose)
+
+### Opção B: Como Servidor Web (Completo)
+
+```bash
+# Modo desenvolvimento (reload automático)
+npm run dev
+
+# Ou modo produção
+npm run start
+```
+
+Acesse: **http://localhost:3000**
+
+Endpoint disponível:
+```bash
+POST /api/generate-plan
+Content-Type: application/json
+
+{
+  "age": 32,
+  "weight_kg": 85,
+  "height_cm": 180,
+  "sex": "masculino",
+  "activity_level": "moderado",
+  "fitness_goals": ["perda_peso"],
+  "dietary_restrictions": [],
+  "preferred_foods": ["frango", "arroz"],
+  "disliked_foods": ["ovos"]
+}
+```
+
+Resposta:
+```json
+{
+  "usuario": { ... },
+  "plano_nutricional": { ... },
+  "plano_7_dias": [ ... ],
+  "resumo": { ... }
+}
+```
+
+### Opção C: Testes Automatizados
+
+```bash
+# Rodar testes (requer ANTHROPIC_API_KEY)
+npm test
+
+# Modo watch (reexecuta ao salvar)
+npm run test:watch
+```
+
+---
+
 ## Passo 6: Mande o Link! 
 
 Quando terminar:
-1. ✅ Implementar agent seguindo spec BMAD
-2. ✅ Passar em 2+ stories
-3. ✅ Deploy no GitHub Pages
-4. ✅ **Compartilhar o link do seu repo**
+1. ✅ Clonar https://github.com/rafaelbercam/new-diet-planner
+2. ✅ Configurar `ANTHROPIC_API_KEY` no `.env`
+3. ✅ Rodar `npm install && npx ts-node example.ts`
+4. ✅ Ver planos de dieta sendo gerados em tempo real
+5. ✅ **Compartilhar o link do seu fork/clone**
 
-Vamos usar como **case study real de BMAD em produção**! 📊
+Isso é **BMAD em produção real**! 📊
+
+**Modelo Usado:** Claude Haiku 4.5 (rápido e eficiente para cálculos nutricionais)  
+**Retry Logic:** 3 tentativas com backoff exponencial (1s → 2s → 4s)
 
 ---
 
