@@ -4,7 +4,7 @@ Portfólio profissional e blog construído com [Docusaurus](https://docusaurus.i
 
 Veja o site em: https://rafaelbercam.github.io/about/
 
-## Setup Local 
+## Setup Local
 
 ### Pré-requisitos
 
