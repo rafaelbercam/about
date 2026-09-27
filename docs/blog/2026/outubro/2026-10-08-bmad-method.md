@@ -110,38 +110,149 @@ Antes de qualquer código, definimos **o que o agente deve fazer**:
 
 **Melhor para:** Ferramenta oficial com suporte, geração automática de código.
 
+#### Passo A1: Instalar BMAD Method
+
 ```bash
-# 1. Instalar
 npx bmad-method install
+```
 
-# 2. Criar projeto
-npx bmad-method create diet-planner
-cd diet-planner
+**Output esperado (real):**
+```
+Need to install the following packages:
+bmad-method@6.12.0
+Ok to proceed? (y) y
 
-# 3. Criar spec interativa
-npx bmad-method spec:create
+                    ██████╗ ███╗   ███╗ █████╗ ██████╗ ™
+                    ██╔══██╗████╗ ████║██╔══██╗██╔══██╗
+                    ██████╔╝██╔████╔██║███████║██║  ██║
+                    ██╔══██╗██║╚██╔╝██║██╔══██║██║  ██║
+                    ██████╔╝██║ ╚═╝ ██║██║  ██║██████╔╝
+                     ╚═════╝ ╚═╝     ╚═╝╚═╝  ╚═╝╚═════╝
+                    Agile Ai Driven Development
+                   Build More, Architect Dreams · © BMad Code
+
+● Installation directory: /Users/rafaelbercam/Projects/new-diet-planner
+```
+
+#### Passo A2: Setup Interativo
+
+O BMAD pede informações durante setup:
+
+**Pergunta 1: Qual é seu nome/equipe?**
+```
+What should agents call you? (Use your name or a team name)
+→ Rafaelbercam
+```
+
+**Pergunta 2: Nome do projeto?**
+```
+What is your project called?
+→ new-diet-planner
+```
+
+**Pergunta 3: Linguagem para agentes?**
+```
+What language should agents use when chatting with you?
+→ Portuguese
+```
+
+**Pergunta 4: Linguagem de documentação?**
+```
+Preferred document output language?
+→ Portuguese
+```
+
+**Pergunta 5: Diretório de output?**
+```
+Where should output files be saved?
+→ _bmad-output
+```
+
+**Pergunta 6: Integração com tools?**
+```
+Integrate with:
+  Selected tools:
+    • Claude Code ⭐
+```
+
+#### Estrutura Criada
+
+Após setup, seu projeto fica assim:
+
+```
+new-diet-planner/
+├── _bmad/                 # Núcleo BMAD instalado
+│   ├── bmad-method/       # v6.12.0
+│   └── shared-scripts/
+├── _bmad-output/          # Outputs dos skills
+├── .claude/
+│   └── skills/            # 50 skills instaladas
+└── .bmad-config.json      # Suas configurações
+```
+
+#### ⚠️ Aviso: UV Não Encontrado
+
+O BMAD usa `uv` para rodar scripts Python:
+
+```
+⚠ uv not found on PATH. BMAD requires it to run Python scripts
+  bmad-build and bmad-build-auto will HALT on activation without it
+
+Easiest path: ask your AI agent to "install and set up uv for me"
+
+Or install manually:
+  macOS/Linux:  curl -LsSf https://astral.sh/uv/install.sh | sh
+  Homebrew:     brew install uv
+  Windows:      powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
+
+**Solução:** Instale `uv` (uma vez) e depois BMAD funciona completo.
+
+#### Passo A3: Criar Spec (Interativa)
+
+```bash
+bmad-method spec:create
 ```
 
 Responda aos prompts:
-- Project name: `Diet Planner`
-- Description: `Agente que gera planos de dieta personalizados`
-- Inputs: `age, weight_kg, height_cm, activity_level, dietary_restrictions, fitness_goals`
-- Outputs: `{ daily_calorie_target, meal_plan[] }`
-- Story 1: `Perda de Peso - age=32, weight_kg=85, fitness_goals=["perda_peso"]`
-- Story 2: `Vegetariano - dietary_restrictions=["vegetariano"], fitness_goals=["ganho_muscular"]`
+- **Project name:** `Diet Planner`
+- **Description:** `Agente que gera planos de dieta personalizados com múltiplas opções`
+- **Inputs:** `age, weight_kg, height_cm, activity_level, dietary_restrictions, fitness_goals`
+- **Outputs:** `{ daily_calorie_target, meal_plan[] }`
+- **Story 1:** `Perda de Peso - age=32, weight_kg=85, fitness_goals=["perda_peso"]`
+- **Story 2:** `Vegetariano - dietary_restrictions=["vegetariano"], fitness_goals=["ganho_muscular"]`
+
+Gera:
+- `bmad-spec.json` — Spec estruturada e validada
+
+#### Passo A4: Gerar Código
 
 ```bash
-# 4. Gerar código
-npx bmad-method generate:agent   # Agent scaffold
-npx bmad-method generate:types   # TypeScript types
-npx bmad-method generate:tests   # Tests das stories
+# Agent scaffold
+bmad-method generate:agent
+
+# TypeScript types  
+bmad-method generate:types
+
+# Tests das stories
+bmad-method generate:tests
 ```
 
-Isso gera:
+**Isso gera automaticamente:**
 - `src/agent.ts` — Estrutura do agent
 - `src/types.ts` — Types validados
 - `tests/agent.test.ts` — Testes das stories
-- `bmad-spec.json` — Spec estruturada
+- `src/spec.bmad.json` — Spec estruturada
+
+#### Passo A5: Revisar Spec
+
+```bash
+bmad-method spec:view
+# ou
+cat bmad-spec.json
+```
+
+Agora sua spec está validada e documentada! ✅
 
 ---
 
