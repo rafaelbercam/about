@@ -522,6 +522,71 @@ Contém:
 
 ---
 
+## Exemplo Real: Passo 1 Executado
+
+Quando você invoca a skill com o briefing, o BMAD analisa e retorna:
+
+```
+Based on Step 1 analysis:
+
+Context Summary:
+- Intent: DIET_PLANNER.briefing — a freeform path (not an epic story)
+- Goal: Single, cohesive goal: Create a Diet Planner Agent using Claude API
+- Planning artifacts: None exist yet
+- Git: Not a git repository (check skipped)
+- Multi-goal: No issues detected — 2 test stories are implementation test cases, not separate goals
+
+Now I'll create the necessary directories and proceed to Step 2 (planning).
+```
+
+### O que Isso Significa
+
+✅ **BMAD entendeu:**
+- Seu objetivo é criar um Diet Planner Agent
+- 2 stories são casos de teste, não objetivos separados
+- Vai criar diretórios necessários
+- Próximo: Step 2 (Planning)
+
+---
+
+## Próximos Passos BMAD (Esperados)
+
+Após Step 1, o BMAD vai:
+
+**Step 2: Planning**
+- Criar diretórios do projeto
+- Estruturar arquitetura
+- Gerar plano de implementação
+
+**Step 3: Implementation** 
+- Gerar `types.ts` baseado no briefing
+- Gerar `agent.ts` com Claude API
+- Gerar testes das stories
+
+**Step 4: Validation**
+- Rodar testes contra stories
+- Validar constraints (calorias, proteína, etc)
+- Revisar código
+
+**Step 5: Output**
+- Salvar tudo em `_bmad-output/`
+- Relatório de sucesso
+
+### Como Acompanhar
+
+Seu agente BMAD vai reportar cada step:
+```
+Step 1 ✅ Analysis complete
+Step 2 ⏳ Planning artifacts...
+Step 3 ⏳ Generating code...
+Step 4 ⏳ Running validations...
+Step 5 ✅ Output ready in _bmad-output/
+```
+
+Deixe o BMAD trabalhar! Quando terminar, compartilhe os arquivos gerados.
+
+---
+
 ## Passo 3: Implementar o Agent
 
 Qualquer que seja seu workflow, você terá agora:
