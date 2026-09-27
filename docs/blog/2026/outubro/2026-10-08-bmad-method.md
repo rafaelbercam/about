@@ -581,7 +581,31 @@ Spec pronto em: `_bmad-output/implementation-artifacts/spec-diet-planner-agent.m
 
 ---
 
-## Próximos Passos BMAD (Continuando)
+### ✅ CHECKPOINT 1 — Spec Ready for Review
+
+BMAD completou Planning e spec está pronto! 
+
+**Spec Location:** `_bmad-output/implementation-artifacts/spec-diet-planner-agent.md`
+
+**Summary:**
+- Feature: Diet Planner Agent (Claude 3.5 Sonnet API)
+- Scope: 1 cohesive goal (~1,100 tokens)
+- Approach: TypeScript with types, agent, utilities, tests
+- Design Decisions Locked ✅
+  - Validação: ranges realistas (18-80 idade, 50-200kg peso)
+  - Erros: retry com backoff (3 tentativas, 1s→2s→4s)
+- Deliverables: 7 files (types, agent, utils, tests, config, docs)
+- Acceptance: 2 test stories + 3 GWT criteria
+
+**Próximas Escolhas:**
+
+1. ✅ **Approve & Continue** → Comece Step 3 (Implementation) agora nesta sessão
+2. ⏸️ **Approve & Stop** → Deixe spec pronto e retome em nova sessão
+3. 🔍 **Review Spec** → Faça revisão profunda com subagent antes de implementar
+
+---
+
+## Próximos Passos BMAD (Se Continuar)
 
 Após Step 1, o BMAD vai:
 
