@@ -13,6 +13,18 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
 ## Agentes de IA
 
 <ProjectCard
+  title="HIVE: Orquestração Multi-Agente"
+  description="Production-ready system implementing the Queen & Workers pattern. Queen (Claude Opus) decomposes complex queries into specialized workers (Claude Haiku) that execute in parallel. 50% faster, 77% cheaper than single-agent approaches. Complete with logging, benchmarks, and 3 real-world examples."
+  technologies={["Python", "Claude API", "Async/Await", "Multi-Agent", "Logging", "Benchmarking"]}
+  githubUrl="https://github.com/rafaelbercam/hive-multi-agent"
+  featured={true}
+/>
+
+[Leia o artigo detalhado no blog](/about/blog/agentes-ia/hive-multi-agent)
+
+---
+
+<ProjectCard
   title="Diet Planner Agent (BMAD-METHOD)"
   description="TypeScript agent that generates personalized meal plans via Claude API. Implements BMAD methodology with input validation, automatic retry logic, and multiple options per meal. Real-world case study of spec-first agent development."
   technologies={["TypeScript", "Claude API", "Agentes de IA", "BMAD-METHOD", "Node.js", "Express"]}

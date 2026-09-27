@@ -3,11 +3,28 @@ sidebar_position: 1
 ---
 
 import ProfileCard from '@site/src/components/ProfileCard';
+import ProjectCard from '@site/src/components/ProjectCard';
 import cardImage from '@site/static/img/card.png';
 
 <ProfileCard imageUrl={cardImage} alt="Rafael Berçam - Foto de Perfil" width={1200} height={630} />
 
 **Engenheiro de Software** especializado em **SDET** (Software Development Engineer in Test), **arquitetura de agentes de IA** e **desenvolvimento full-stack**.
+
+---
+
+## 🚀 Projeto em Destaque
+
+<ProjectCard
+  title="HIVE: Orquestração Multi-Agente"
+  description="Production-ready system implementing the Queen & Workers pattern. Queen (Claude Opus) decomposes complex queries into specialized workers (Claude Haiku) that execute in parallel. 50% faster, 77% cheaper than single-agent approaches. Complete with real-world benchmarks."
+  technologies={["Python", "Claude API", "Async/Await", "Multi-Agent", "Logging", "Benchmarking"]}
+  githubUrl="https://github.com/rafaelbercam/hive-multi-agent"
+  featured={true}
+/>
+
+[Leia o artigo aprofundado](/about/blog/agentes-ia/hive-multi-agent) | [Ver no GitHub](https://github.com/rafaelbercam/hive-multi-agent)
+
+---
 
 Construo sistemas que você pode confiar. Qualidade de código, testes automatizados, e inovação não são separados—são a mesma coisa.
 
