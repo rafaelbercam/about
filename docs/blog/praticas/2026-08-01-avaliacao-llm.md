@@ -8,6 +8,8 @@ authors: [rafael]
 
 # Avaliação de Sistemas de IA: De BLEU à LLM-as-Judge
 
+*Escrito por Rafael Berçam Medeiros em 1º de Agosto de 2026*
+
 Como você sabe se seu agente está funcionando bem? BLEU e ROUGE foram padrão por 20 anos — mas falham silenciosamente. Com explosão dos LLMs, emergiu uma nova era: **LLM-as-Judge**.
 
 ## Métricas Tradicionais: Por Que Falham

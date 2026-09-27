@@ -8,6 +8,8 @@ authors: [rafael]
 
 # Memória em Agentes de IA: Arquiteturas para Contexto Persistente
 
+*Escrito por Rafael Berçam Medeiros em 25 de Agosto de 2026*
+
 Um agente sem memória tem amnésia — esquece cada conversa, começa do zero. Escala para produção apenas com memória: curto prazo, longo prazo, estruturada.
 
 ## Tipos de Memória

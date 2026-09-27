@@ -9,6 +9,8 @@ date: 2026-10-30
 
 # Claude & Devin: Cheat Sheet de Comandos e Técnicas
 
+*Escrito por Rafael Berçam Medeiros em 15 de Setembro de 2026*
+
 Trabalhar com Claude e Devin é mais eficiente quando você conhece os comandos certos e as técnicas de prompt que amplificam o output de qualidade. Este artigo é um guia prático e direto ao ponto.
 
 <!--truncate-->

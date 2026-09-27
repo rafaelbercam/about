@@ -10,6 +10,8 @@ import Video from '@site/src/components/VideoPlayer';
 
 # BMAD-METHOD: Desenvolvimento Dirigido por Especificação (Hands-On)
 
+*Escrito por Rafael Berçam Medeiros em 27 de Setembro de 2026*
+
 Chega de agentes que "funcionam às vezes". BMAD-METHOD é uma abordagem **spec-first** que coloca a especificação clara no centro do desenvolvimento. 
 
 Este artigo é **100% prático**: você vai seguir um passo-a-passo real para construir um **Diet Planner** - agente que gera planos de dieta personalizados. Vou mostrar **3 workflows diferentes** para você escolher qual se adapta melhor.

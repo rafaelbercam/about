@@ -8,6 +8,8 @@ authors: [rafael]
 
 # HIVE: Infraestrutura de Escalamento para Sistemas Multi-Agente
 
+*Escrito por Rafael Berçam Medeiros em 15 de Agosto de 2026*
+
 Quando um agente não é suficiente, você precisa de vários agentes trabalhando juntos. Mas coordenar múltiplos LLMs é um desafio que vai muito além de "chamar várias APIs".
 
 HIVE é uma infraestrutura emergente que resolve esse problema através de otimizações sofisticadas em tempo de inferência, alocação eficiente de recursos e eliminação de redundância entre agentes.

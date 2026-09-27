@@ -8,6 +8,8 @@ date: 2026-09-28
 
 # Guia Prático: Implementar RAG com LangChain em 30 Minutos
 
+*Escrito por Rafael Berçam Medeiros em 22 de Agosto de 2026*
+
 Quer implementar um sistema RAG profissional? Neste guia, vamos construir um chatbot que responde perguntas sobre documentação usando LangChain e vetores.
 
 ## Pré-requisitos

@@ -8,6 +8,8 @@ date: 2026-10-02
 
 # Troubleshooting: 10 Problemas Comuns em Sistemas de IA
 
+*Escrito por Rafael Berçam Medeiros em 10 de Setembro de 2026*
+
 Seu sistema de IA está bugado? Este é o checklist que usamos em produção.
 
 <!--truncate-->

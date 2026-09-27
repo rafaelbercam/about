@@ -8,6 +8,8 @@ authors: [rafael]
 
 # HYBRID-FLOW: Combinando Reativo e Deliberativo em Arquiteturas de Agentes
 
+*Escrito por Rafael Berçam Medeiros em 18 de Agosto de 2026*
+
 Um agente reativo age instantaneamente. Um agente deliberativo pensa antes de agir. Qual escolher? A resposta prática é: **ambos**.
 
 HYBRID-FLOW é uma prática emergente de combinar componentes reativos e deliberativos na mesma arquitetura.

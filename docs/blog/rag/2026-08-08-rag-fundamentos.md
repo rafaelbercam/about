@@ -8,6 +8,8 @@ authors: [rafael]
 
 # RAG: Fundamentos e Padrões de Arquitetura
 
+*Escrito por Rafael Berçam Medeiros em 8 de Agosto de 2026*
+
 A busca por sistemas de IA mais precisos e atualizados levou ao desenvolvimento de uma técnica elegante: RAG (Retrieval-Augmented Generation). Ao combinar um modelo de linguagem com a capacidade de consultar fontes externas de conhecimento, RAG resolve dois problemas clássicos dos LLMs: alucinações (respostas fabricadas) e desatualização do conhecimento de treino.
 
 Neste artigo, você aprenderá os conceitos fundamentais de RAG, seus padrões de implementação (desde os mais simples até os mais sofisticados), e como avaliar qual abordagem faz sentido para seu caso de uso.
