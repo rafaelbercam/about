@@ -143,13 +143,6 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
-      algolia: {
-        appId: 'XXXXXXXXXX', // Substituir
-        apiKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXX', // Substituir
-        indexName: 'rafaelbercam', // Seu index name
-        contextualSearch: true,
-        searchParameters: {},
-      },
     }),
 };
 
