@@ -83,7 +83,6 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'Rafael Berçam',
         logo: {
           alt: 'Rafael Berçam',
           src: 'img/card.png',
