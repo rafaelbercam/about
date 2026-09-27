@@ -10,7 +10,7 @@ date: 2026-09-29
 
 *Escrito por Rafael Berçam Medeiros em 29 de Agosto de 2026*
 
-2025 trouxe uma escolha: usar RAG (Retrieval-Augmented Generation) ou apostar em modelos com contexto gigante? Neste artigo, comparamos as duas abordagens.
+2025 trouxe uma escolha: usar RAG (Retrieval-Augmented Generation) ou apostar em modelos com contexto gigante? Aqui, as duas abordagens lado-a-lado.
 
 ## TL;DR
 
