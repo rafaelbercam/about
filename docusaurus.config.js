@@ -59,13 +59,6 @@ const config = {
         anonymizeIP: true,
       },
     ],
-    [
-      '@easyops-cn/docusaurus-search-local',
-      /** @type {import('@easyops-cn/docusaurus-search-local').PluginOptions} */
-      ({
-        hashed: true,
-      }),
-    ],
   ],
 
   headTags: [
