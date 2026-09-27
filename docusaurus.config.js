@@ -45,6 +45,16 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'G-XXXXXXXXXX', // Substituir pelo seu ID do GA4
+        anonymizeIP: true,
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -115,6 +125,13 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      algolia: {
+        appId: 'XXXXXXXXXX', // Substituir
+        apiKey: 'XXXXXXXXXXXXXXXXXXXXXXXXXX', // Substituir
+        indexName: 'rafaelbercam', // Seu index name
+        contextualSearch: true,
+        searchParameters: {},
       },
     }),
 };
