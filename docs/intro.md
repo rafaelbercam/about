@@ -219,6 +219,7 @@ Acredito que:
 
 Estou sempre aberto a conversas sobre desenvolvimento, arquitetura, automação, IA e oportunidades de colaboração!
 
+- **[Currículo](https://rafaelbercam.github.io/)** — Histórico profissional completo e resumido
 - **[GitHub](https://github.com/rafaelbercam)** — Projetos e contribuições
 - **[LinkedIn](https://www.linkedin.com/in/rafaelbercam/)** — Histórico profissional
 - **[dev.to](https://dev.to/rafaelbercam)** — Artigos técnicos
