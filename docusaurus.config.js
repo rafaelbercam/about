@@ -49,7 +49,7 @@ const config = {
     mermaid: true,
   },
 
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: ['@docusaurus/theme-mermaid', '@easyops-cn/docusaurus-search-local'],
 
   plugins: [
     [
@@ -144,6 +144,16 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  plugins: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['pt-br'],
+      },
+    ],
+  ],
 };
 
 module.exports = config;
