@@ -4,9 +4,9 @@
  * work well for content-centric websites.
  */
 
-/* Professional color scheme - inspired by GitHub Docs */
+/* GitHub Light Color Scheme */
 :root {
-  /* Primary colors - Professional Blue */
+  /* Primary colors - GitHub Blue */
   --ifm-color-primary: #0969DA;
   --ifm-color-primary-dark: #033D8B;
   --ifm-color-primary-darker: #0860CA;
@@ -15,53 +15,64 @@
   --ifm-color-primary-lighter: #79C0FF;
   --ifm-color-primary-lightest: #BFD4F2;
 
-  /* Background - Clean white with subtle grays */
+  /* Background - Light theme */
   --ifm-background-color: #FFFFFF;
   --ifm-background-surface-color: #F6F8FA;
 
-  /* Footer - Professional light gray */
+  /* Navbar */
+  --ifm-navbar-background-color: #FFFFFF;
+  --ifm-navbar-height: 60px;
+
+  /* Footer */
   --ifm-footer-background-color: #F6F8FA;
 
-  /* Text colors */
+  /* Text colors - High contrast */
   --ifm-font-color-base: #24292F;
   --ifm-font-color-secondary: #656D76;
 
-  /* Typography - Use Docusaurus defaults */
+  /* Typography */
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(9, 105, 218, 0.08);
 
   /* Borders */
-  --ifm-border-color: #D8DEE4;
+  --ifm-border-color: #D0D7DE;
 }
 
-/* ============ Hide Navbar ============ */
+/* Dark mode support */
+[data-theme='dark'] {
+  --ifm-background-color: #0D1117;
+  --ifm-background-surface-color: #161B22;
+  --ifm-navbar-background-color: #0D1117;
+  --ifm-footer-background-color: #161B22;
+  --ifm-font-color-base: #E6EDF3;
+  --ifm-font-color-secondary: #8B949E;
+  --ifm-border-color: #30363D;
+  --docusaurus-highlighted-code-line-bg: rgba(9, 105, 218, 0.15);
+}
 
+/* ============ Navbar ============ */
 .navbar {
-  display: none !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid var(--ifm-border-color);
 }
 
-.navbar-wrapper {
-  display: none !important;
+.navbar__logo {
+  font-weight: 700;
 }
 
 /* ============ Main Layout ============ */
-
 .main-wrapper {
   margin-left: 0 !important;
   margin-top: 0 !important;
 }
 
 /* ============ Footer ============ */
-
 .footer {
-  background-color: #F6F8FA;
-  border-top: 1px solid #D8DEE4;
-  color: #656D76;
-  margin-left: 320px;
+  border-top: 1px solid var(--ifm-border-color);
 }
 
 .footer__link-item {
-  color: #0969DA;
+  color: var(--ifm-color-primary);
 }
 
 .footer__link-item:hover {
@@ -69,27 +80,78 @@
 }
 
 /* ============ Documentation ============ */
-
 .docusaurus-mt-lg {
   margin-top: 2rem;
 }
 
 .table-of-contents {
-  border-left: 2px solid #D8DEE4;
+  border-left: 2px solid var(--ifm-border-color);
   padding-left: 1rem;
 }
 
 .table-of-contents__link {
-  color: #656D76;
+  color: var(--ifm-font-color-secondary);
 }
 
 .table-of-contents__link--active {
-  color: #0969DA;
+  color: var(--ifm-color-primary);
   font-weight: 600;
 }
 
-@media (max-width: 996px) {
-  .footer {
-    margin-left: 0;
-  }
+/* ============ Blog ============ */
+.blog-wrapper {
+  padding: 2rem 0;
+}
+
+.blog__posts {
+  max-width: 900px;
+}
+
+.pagination {
+  margin-top: 2rem;
+}
+
+/* ============ Code Blocks ============ */
+.docusaurus-highlight-code-line {
+  background-color: var(--docusaurus-highlighted-code-line-bg);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+/* ============ Links ============ */
+a {
+  color: var(--ifm-color-primary);
+}
+
+a:hover {
+  color: var(--ifm-color-primary-dark);
+}
+
+/* ============ Buttons ============ */
+.button {
+  border-radius: 6px;
+}
+
+.button--primary {
+  background-color: var(--ifm-color-primary);
+}
+
+.button--primary:hover {
+  background-color: var(--ifm-color-primary-dark);
+}
+
+/* ============ Font Awesome Icons in Sidebar ============ */
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sidebar-title .fa-solid:before,
+.sidebar-title .fa-regular:before,
+.sidebar-title .fa-brands:before {
+  margin-right: 0.25rem;
+  color: var(--ifm-color-primary);
+  font-size: 0.95rem;
 }

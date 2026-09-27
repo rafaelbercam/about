@@ -1,11 +1,13 @@
-import React from 'react';
-import Layout from '@theme/Layout';
-import AboutContent from '@site/src/components/AboutContent';
+import React, { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    window.location.href = '/about/docs/intro';
+  }, []);
+
   return (
-    <Layout title="Rafael Bercam" description="Desenvolvedor de software | Engenharia, arquitetura e boas práticas">
-      <AboutContent />
-    </Layout>
+    <div style={{ textAlign: 'center', padding: '2rem' }}>
+      <p>Redirecionando...</p>
+    </div>
   );
 }
