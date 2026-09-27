@@ -1,8 +1,9 @@
 ---
-sidebar_position: 2
+slug: bmad-method
 title: "BMAD-METHOD: Desenvolvimento Dirigido por Especificação"
 description: "Metodologia estruturada para desenvolvimento de agentes de IA confiáveis"
 tags: [bmad, agentes, metodologia, desenvolvimento]
+authors: [rafael]
 ---
 
 # BMAD-METHOD: Desenvolvimento Dirigido por Especificação para Agentes de IA

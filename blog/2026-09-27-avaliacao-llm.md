@@ -1,8 +1,9 @@
 ---
-sidebar_position: 6
+slug: avaliacao-llm
 title: "Avaliação de Sistemas de IA: LLM-as-Judge"
 description: "De BLEU/ROUGE até avaliação automática com modelos de linguagem"
 tags: [avaliacao, eval, llm, qualidade, benchmark]
+authors: [rafael]
 ---
 
 # Avaliação de Sistemas de IA: De BLEU à LLM-as-Judge

@@ -1,8 +1,9 @@
 ---
-sidebar_position: 3
+slug: hive-multi-agent
 title: "HIVE: Infraestrutura de Escalamento Multi-Agente"
 description: "Otimizações inteligentes para sistemas com múltiplos agentes de IA"
 tags: [hive, agentes, orquestração, escalamento]
+authors: [rafael]
 ---
 
 # HIVE: Infraestrutura de Escalamento para Sistemas Multi-Agente

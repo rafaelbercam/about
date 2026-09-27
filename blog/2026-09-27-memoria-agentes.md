@@ -1,8 +1,9 @@
 ---
-sidebar_position: 5
+slug: memoria-agentes
 title: "Memória em Agentes de IA"
 description: "Arquiteturas de contexto persistente para agentes inteligentes"
 tags: [memoria, agentes, contexto, persistencia]
+authors: [rafael]
 ---
 
 # Memória em Agentes de IA: Arquiteturas para Contexto Persistente

@@ -1,8 +1,9 @@
 ---
-sidebar_position: 1
+slug: rag-fundamentos
 title: "RAG: Fundamentos e Padrões de Arquitetura"
 description: "Retrieval-Augmented Generation: como combinar LLMs com conhecimento externo"
 tags: [rag, llm, retrieval, generacao]
+authors: [rafael]
 ---
 
 # RAG: Fundamentos e Padrões de Arquitetura

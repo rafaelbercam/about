@@ -1,8 +1,9 @@
 ---
-sidebar_position: 4
+slug: hybrid-flow
 title: "HYBRID-FLOW: Reativo + Deliberativo"
 description: "Combinando ação imediata com planejamento cuidadoso em arquiteturas de agentes"
 tags: [hybrid, agentes, arquitetura, llm]
+authors: [rafael]
 ---
 
 # HYBRID-FLOW: Combinando Reativo e Deliberativo em Arquiteturas de Agentes
