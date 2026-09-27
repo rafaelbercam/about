@@ -6,6 +6,8 @@ tags: [bmad, agentes, metodologia, desenvolvimento, hands-on, claude]
 authors: [rafael]
 ---
 
+import Video from '@site/src/components/VideoPlayer';
+
 # BMAD-METHOD: Desenvolvimento Dirigido por Especificação (Hands-On)
 
 Chega de agentes que "funcionam às vezes". BMAD-METHOD é uma abordagem **spec-first** que coloca a especificação clara no centro do desenvolvimento. 
@@ -817,13 +819,18 @@ Seu agente estará em: `https://seu-usuario.github.io/diet-planner/`
 
 ## 🎬 Aplicação Rodando: Demo ao Vivo
 
-Este é o **resultado prático** da metodologia BMAD. A aplicação recebe seus dados pessoais e retorna um plano de dieta personalizado em tempo real:
+Este é o **resultado prático** da metodologia BMAD. A aplicação recebe seus dados pessoais e retorna um plano de dieta personalizado em tempo real.
 
-<video controls width="100%" style={{maxWidth: "800px", borderRadius: "8px", marginTop: "16px"}}>
-  <source src="/img/blog/dietPlannerMovie.mov" type="video/quicktime" />
-  Seu navegador não suporta vídeo. 
-  <a href="/img/blog/dietPlannerMovie.mov">Download do vídeo</a>
-</video>
+<Video src="/about/img/blog/dietPlannerMovie.mov" title="Diet Planner Agent - Demonstração ao vivo" />
+
+### O que o Vídeo Mostra:
+
+- 📝 **Entrada:** Formulário com dados do usuário (idade, peso, altura, objetivo, restrições)
+- ⚙️ **Processamento:** Claude API gerando plano personalizado
+- 📊 **Saída:** Plano de 7 dias com múltiplas opções de refeição
+- ✅ **Validações:** Calorias ±5%, proteína, restrições dietéticas respeitadas
+
+Essa é a **aplicação real** do seu BMAD Diet Planner Agent em produção!
 
 ### O que o Vídeo Mostra:
 
