@@ -19,12 +19,8 @@
   --ifm-background-color: #FFFFFF;
   --ifm-background-surface-color: #F6F8FA;
 
-  /* Navbar - Professional light gray */
-  --ifm-navbar-background-color: #F6F8FA;
+  /* Footer - Professional light gray */
   --ifm-footer-background-color: #F6F8FA;
-
-  /* Sidebar - Slightly darker but still clean */
-  --ifm-sidebar-background-color: #F6F8FA;
 
   /* Text colors */
   --ifm-font-color-base: #24292F;
@@ -34,19 +30,26 @@
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(9, 105, 218, 0.08);
 
-  /* Shadows and borders */
-  --ifm-navbar-shadow: 0 1px 0 rgba(31, 35, 40, 0.04);
+  /* Borders */
   --ifm-border-color: #D8DEE4;
 }
 
-/* ============ Navbar ============ */
+/* ============ Hide Navbar ============ */
 
 .navbar {
-  background-color: #F6F8FA;
-  border-bottom: 1px solid #D8DEE4;
-  box-shadow: var(--ifm-navbar-shadow);
+  display: none !important;
 }
 
+.navbar-wrapper {
+  display: none !important;
+}
+
+/* ============ Main Layout ============ */
+
+.main-wrapper {
+  margin-left: 0 !important;
+  margin-top: 0 !important;
+}
 
 /* ============ Footer ============ */
 
@@ -54,6 +57,7 @@
   background-color: #F6F8FA;
   border-top: 1px solid #D8DEE4;
   color: #656D76;
+  margin-left: 260px;
 }
 
 .footer__link-item {
@@ -63,7 +67,6 @@
 .footer__link-item:hover {
   text-decoration: underline;
 }
-
 
 /* ============ Documentation ============ */
 
@@ -85,4 +88,8 @@
   font-weight: 600;
 }
 
-
+@media (max-width: 996px) {
+  .footer {
+    margin-left: 0;
+  }
+}
