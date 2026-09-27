@@ -27,6 +27,12 @@ graph TD
     B --> F["Agent D<br/>(QA)"]
 ```
 
+### Output Real do Sistema HIVE
+
+![HIVE Multi-Agent Output](/img/blog/prompt-saida-hive-workers.png)
+
+*Exemplo real de execução: Queen decompõe query complexa em 5 subtarefas, workers executam em paralelo (~50s), resultado final agregado pela Queen.*
+
 ## Conceitos Centrais
 
 ### 1. Logits Cache: Eliminando Redundância
