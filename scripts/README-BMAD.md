@@ -10,6 +10,21 @@ chmod +x scripts/generate-bmad-spec.sh scripts/bmad-setup.sh
 
 ## 1. Setup Rápido de Novo Projeto
 
+### Com Estrutura do dietPlan Real
+
+```bash
+# Clone do projeto real como referência
+git clone https://github.com/rafaelbercam/dietPlan.git diet-planner-bmad
+cd diet-planner-bmad
+
+# Veja a estrutura real
+cat src/types/index.ts  # Estrutura de tipos
+cat src/services/mealPlanService.ts  # Serviço
+cat src/data/meals.ts  # Dados de exemplo
+```
+
+### Setup Rápido
+
 ```bash
 ./scripts/bmad-setup.sh "Diet Planner"
 ```
@@ -54,7 +69,26 @@ npx bmad-agent-init
 npx bmad-buff init --template agent
 ```
 
-## 3. Exemplo Prático
+## 3. Exemplo Prático (Baseado no dietPlan Real)
+
+### Estrutura do Projeto Real
+
+O dietPlan usa:
+- **Types:** `src/types/index.ts` (MealPlanPeriod, Meal, FoodItem, etc.)
+- **Serviço:** `src/services/mealPlanService.ts` (integração com agente)
+- **Store:** `src/stores/mealPlan.store.ts` (Pinia para estado)
+- **Dados:** `src/data/` (meals, fruits, meats, carbs, vegetables, desserts)
+- **Build:** `build:docs` para GitHub Pages
+
+### Usar Spec Baseada em Projeto Real
+
+```bash
+# Spec já preparada baseada na estrutura real
+cat specs/BMAD-dietPlan-example.md
+
+# Ou gerar uma nova baseada no seu projeto
+../scripts/generate-bmad-spec.sh "Diet Planner" "Baseado em rafaelbercam/dietPlan"
+```
 
 ### Passo 1: Setup
 
