@@ -137,7 +137,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Rafael Bercam. Construído com Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Rafael Bercam.`,
       },
       prism: {
         theme: lightCodeTheme,
