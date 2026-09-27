@@ -83,11 +83,12 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
+        title: 'Rafael Berçam',
         logo: {
           alt: 'Rafael Berçam',
-          src: 'img/card.png',
-          width: 110,
-          height: 55,
+          src: 'img/favicon-512.png',
+          width: 40,
+          height: 40,
         },
         items: [
           {
