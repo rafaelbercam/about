@@ -183,7 +183,7 @@ class EmbeddingsManager:
         """Inicializa embeddings locais (HuggingFace)
         
         Primeira execução: ~45s (download do modelo ~90MB)
-        Execuções subsequentes: <1s (modelo em cache)
+        Execuções subsequentes: 1s (modelo em cache)
         """
         self.embeddings = HuggingFaceEmbeddings(
             model_name=model,
@@ -216,7 +216,7 @@ class EmbeddingsManager:
             self.embeddings,
             allow_dangerous_deserialization=True
         )
-        logger.info(f"Vectorstore carregado em <1s")
+        logger.info(f"Vectorstore carregado em 1s")
         return vectorstore
 
 # Uso
@@ -351,11 +351,11 @@ print("Fontes:", [doc.metadata["source"] for doc in result["source_documents"]])
 
 3. **chain_type="stuff"**: 
    - Combina os 3 documentos no prompt
-   - Simples e eficiente (< 4s por query)
+   - Simples e eficiente (até 4s por query)
 
 4. **Prompt força contexto**: "Responda apenas baseado no contexto..."
    - Claude segue bem instruções explícitas
-   - Reduz alucinações de ~5% para <1%
+   - Reduz alucinações de ~5% para menos de 1%
 
 5. **return_source_documents=True**: Rastreabilidade 100%
 
