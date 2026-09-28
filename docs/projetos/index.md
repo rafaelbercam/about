@@ -36,6 +36,18 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
 
 ---
 
+<ProjectCard
+  title="RAG com LangChain"
+  description="Production-ready Retrieval-Augmented Generation system. Modular architecture with 7 components, 85% test coverage, and real-world performance benchmarks. Reduces hallucinations, provides source traceability. Includes CLI, conversational memory, and advanced retrieval strategies."
+  technologies={["Python", "LangChain", "FAISS", "OpenAI", "pytest", "CLI", "RAG"]}
+  githubUrl="https://github.com/rafaelbercam/rag-langchain"
+  featured={true}
+/>
+
+[Leia o guia de implementação no blog](/blog/rag/guia-rag-langchain)
+
+---
+
 ## Automação de Testes
 
 <ProjectCard
