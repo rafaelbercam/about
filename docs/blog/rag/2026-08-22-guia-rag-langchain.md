@@ -23,7 +23,7 @@ pip install langchain==0.1.17 openai==1.12.0 faiss-cpu==1.7.4 python-dotenv==1.0
 **Observação sobre escolhas de tecnologia:**
 
 - **LangChain 0.1.17**: Versão estável com API consistente. Evite pinning automático a "latest" em produção.
-- **FAISS**: Vector store in-memory. Adequado para <1M vetores. Para escala maior, use Pinecone ou Weaviate.
+- **FAISS**: Vector store in-memory. Adequado para até 1M vetores. Para escala maior, use Pinecone ou Weaviate.
 - **OpenAI vs. Modelos locais**: Este guia usa OpenAI Embeddings, mas embeddings locais (all-MiniLM-L6-v2) funcionam bem para uso local com custo zero.
 - **python-dotenv**: Carrega variáveis de ambiente. Essencial para gerenciar API keys sem commitá-las.
 
@@ -199,7 +199,7 @@ vectorstore = manager.load_vectorstore(config.VECTORSTORE_PATH)
 
 **Alternativas de vector stores:**
 
-- **FAISS**: In-memory, local, sem custo. Melhor para <1M vetores.
+- **FAISS**: In-memory, local, sem custo. Melhor para até 1M vetores.
 - **Pinecone**: SaaS, escalável, com metadata filtering. Custo ~$0.04/1M vetores.
 - **Weaviate**: Open-source, self-hosted, production-ready.
 - **Milvus**: Performance otimizada, bom para alta concorrência.
@@ -512,7 +512,7 @@ Recomendação: Começar com prompt customizado (0 custo, -30% alucinações).
 **Problema: Documentos recuperados não são relevantes**
 
 Causas potenciais:
-1. Chunks muito pequenos (<500 chars) → falta contexto
+1. Chunks muito pequenos (menos de 500 chars) → falta contexto
 2. Chunks muito grandes (>2000 chars) → ruído demais
 3. Embeddings inadequados → model mismatch
 
