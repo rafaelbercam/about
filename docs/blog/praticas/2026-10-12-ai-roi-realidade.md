@@ -1,8 +1,8 @@
 ---
-slug: ai-roi-realidade
+slug: ai-roi-plot-twist
 title: "O Plot Twist do AI: Quando o Hype Encontra a Realidade"
 authors: [rafael]
-tags: [ai, roi, mercado, desenvolvimento, tech-debt]
+tags: [ia, roi, mercado, desenvolvimento, tech-debt, pratica]
 date: 2026-10-12
 ---
 

@@ -77,6 +77,9 @@ Checklist prático com soluções para alucinações, latência, acurácia, RAG 
 **11. [Claude + Devin Cheatsheet: Comandos de Otimização](/docs/blog/praticas/claude-devin-cheatsheet)** *(15/09/2026)*
 Guia rápido de comandos e prompts para otimizar o uso do Claude e Devin em workflows profissionais.
 
+**12. [O Plot Twist do AI: Quando Hype Encontra a Realidade](/docs/blog/praticas/ai-roi-plot-twist)** *(12/10/2026)*
+Análise crítica do fracasso de 80% dos projetos de IA. ROI real, qualidade de código, tech debt acelerado e mudanças de papéis em desenvolvimento.
+
 ---
 
 ### 📖 Referência
@@ -114,7 +117,7 @@ Guia rápido de comandos e prompts para otimizar o uso do Claude e Devin em work
 | **Agentes de IA** | 2 | Metodologia, orquestração |
 | **RAG** | 3 | Fundamentos, implementação, comparação |
 | **Arquitetura** | 2 | Padrões avançados, memória |
-| **Práticas** | 4 | Operações, troubleshooting, tendências |
+| **Práticas** | 5 | Operações, troubleshooting, tendências, ROI |
 | **Referência** | 1 | Glossário técnico |
 
 ---
