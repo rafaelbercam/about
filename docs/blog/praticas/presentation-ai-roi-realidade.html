@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Plot Twist do AI — Apresentação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .presentation {
+            width: 100%;
+            max-width: 1200px;
+            aspect-ratio: 16 / 9;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            padding: 60px;
+            background: white;
+            animation: fadeIn 0.5s ease-in-out;
+            overflow: auto;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Slide Styling */
+        .slide-title-page {
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            color: white;
+            text-align: center;
+            justify-content: center !important;
+        }
+
+        .slide-title-page h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .slide-title-page p {
+            font-size: 1.3em;
+            color: #d1d5db;
+            margin-bottom: 40px;
+        }
+
+        .slide-title-page .author {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+            justify-content: center;
+        }
+
+        .slide-title-page img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .slide-content h1 {
+            font-size: 2.5em;
+            color: #1f2937;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #ef4444;
+        }
+
+        .slide-content h2 {
+            font-size: 1.8em;
+            color: #374151;
+            margin-bottom: 20px;
+        }
+
+        .slide-content ul {
+            list-style: none;
+            margin-left: 0;
+        }
+
+        .slide-content li {
+            font-size: 1.2em;
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .slide-content li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #ef4444;
+            font-size: 1.4em;
+        }
+
+        .stat-box {
+            background: #f3f4f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #ef4444;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #ef4444;
+        }
+
+        .stat-label {
+            font-size: 1em;
+            color: #6b7280;
+            margin-top: 5px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .color-success { color: #22c55e; }
+        .color-danger { color: #ef4444; }
+        .color-warning { color: #eab308; }
+        .color-info { color: #3b82f6; }
+
+        /* Controls */
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        button {
+            background: #1f2937;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #374151;
+            transform: translateY(-2px);
+        }
+
+        button:disabled {
+            background: #d1d5db;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            font-size: 1em;
+            color: #6b7280;
+            font-weight: 600;
+        }
+
+        .logo-bar {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .logo-bar img {
+            height: 40px;
+            object-fit: contain;
+        }
+
+        /* Highlight colors */
+        .highlight-danger {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        .highlight-success {
+            color: #22c55e;
+            font-weight: 600;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: #f9fafb;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .card h3 {
+            color: #1f2937;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .card p {
+            color: #6b7280;
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .footer-slide {
+            text-align: center;
+            color: #6b7280;
+            font-size: 1.1em;
+        }
+
+        .footer-slide h2 {
+            color: #1f2937;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Title -->
+        <div class="slide slide-title-page active">
+            <div>
+                <h1>O Plot Twist do AI</h1>
+                <p>Quando o Hype Encontra a Realidade</p>
+                <p style="font-size: 1.1em; margin-top: 40px;">Uma análise de dados sobre o fracasso de investimentos em IA em 2026</p>
+            </div>
+            <div class="author">
+                <img src="../../static/img/logo.png" alt="Rafael">
+                <div style="text-align: left;">
+                    <p style="font-weight: 600; margin: 0;">Rafael Berçam</p>
+                    <p style="font-size: 0.9em; margin: 0; color: #9ca3af;">Análise técnica sobre implementação de AI</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: The Problem -->
+        <div class="slide slide-content">
+            <h1>Os números que ninguém quer admitir</h1>
+            <div class="stat-box">
+                <div class="stat-number"><span class="color-danger">56%</span></div>
+                <div class="stat-label">dos CEOs reportam <strong>zero ROI</strong> de investimentos em AI</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number"><span class="color-danger">95%</span></div>
+                <div class="stat-label">dos pilotos de GenAI produzem <strong>zero impacto mensurável</strong> em P&L</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number"><span class="color-danger">80%</span></div>
+                <div class="stat-label">de todos os projetos de AI <strong>falham em algum nível</strong></div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Pyramid of Failures -->
+        <div class="slide slide-content">
+            <h1>A pirâmide dos fracassos</h1>
+            <div style="margin: 40px 0;">
+                <div class="stat-box" style="border-left-color: #ef4444;">
+                    <div style="font-weight: 600; color: #ef4444;">33.8%</div>
+                    <div>Abandonados antes de chegar à produção</div>
+                </div>
+                <div class="stat-box" style="border-left-color: #f97316;">
+                    <div style="font-weight: 600; color: #f97316;">28.4%</div>
+                    <div>Em produção, mas zero valor entregue</div>
+                </div>
+                <div class="stat-box" style="border-left-color: #eab308;">
+                    <div style="font-weight: 600; color: #eab308;">18.1%</div>
+                    <div>Valor insuficiente para justificar custos</div>
+                </div>
+                <div class="stat-box" style="border-left-color: #22c55e;">
+                    <div style="font-weight: 600; color: #22c55e;">19.7%</div>
+                    <div>Atingem ou excedem os objetivos</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Code Quality Crisis -->
+        <div class="slide slide-content">
+            <h1>A crise de qualidade do código</h1>
+            <ul>
+                <li><span class="color-danger">70% mais bugs</span> comparado a código humano</li>
+                <li><span class="color-danger">1.7x mais problemas</span> relacionados à lógica</li>
+                <li><span class="color-warning">49% do código</span> falha em produção na primeira iteração</li>
+                <li><span class="color-danger">44% das tarefas críticas</span> geram vulnerabilidades de segurança</li>
+            </ul>
+            <div style="margin-top: 50px; padding: 20px; background: #fef2f2; border-left: 4px solid #ef4444; border-radius: 6px;">
+                <p><strong>Composição dos erros:</strong></p>
+                <p>58% erros lógicos • 52% edge cases • 42% código duplicado • 42% viola requirements</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Vicious Cycle -->
+        <div class="slide slide-content">
+            <h1>O funil da velocidade falsa</h1>
+            <div style="margin: 40px 0; font-size: 1.1em; line-height: 2;">
+                <p><strong>1.</strong> Pressão por velocidade da board</p>
+                <p><strong>2.</strong> Adoção rápida de AI para acelerar</p>
+                <p><strong>3.</strong> Volume impossível de revisar (3x código gerado)</p>
+                <p><strong>4.</strong> Code review superficial</p>
+                <p><strong>5.</strong> Bugs em produção aparecem</p>
+                <p><strong>6.</strong> Mais overhead de review</p>
+                <p><strong>7.</strong> Ciclo começa novamente...</p>
+            </div>
+            <div style="margin-top: 30px; padding: 15px; background: #fee2e2; border-radius: 6px; color: #991b1b;">
+                <strong>Resultado:</strong> Você não fica mais rápido. Fica mais lento porque a densidade de bugs aumentou.
+            </div>
+        </div>
+
+        <!-- Slide 6: Technical Debt -->
+        <div class="slide slide-content">
+            <h1>O custo oculto: debt acelerado</h1>
+            <div class="grid-3">
+                <div class="card" style="border-left-color: #ef4444;">
+                    <h3>Requirements Debt</h3>
+                    <p>Código faz algo, mas não exatamente o que foi pedido. Prompt vago leva a interpolação.</p>
+                </div>
+                <div class="card" style="border-left-color: #f97316;">
+                    <h3>Testing Debt</h3>
+                    <p>Testes gerados por AI que passam, mas não testam o que importa de verdade.</p>
+                </div>
+                <div class="card" style="border-left-color: #eab308;">
+                    <h3>Design Debt</h3>
+                    <p>AI não refatora arquitetura. Cria mais camadas, não resolve problemas estruturais.</p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.1em; color: #374151;">
+                💡 <strong>Débito técnico</strong> é como pedir empréstimo: você ganha tempo hoje, mas depois precisa pagar com muito mais trabalho.
+            </p>
+        </div>
+
+        <!-- Slide 7: Role Change -->
+        <div class="slide slide-content">
+            <h1>A mudança de papéis (e por que é ruim)</h1>
+            <div class="two-column">
+                <div>
+                    <h2 style="color: #ef4444; font-size: 1.3em;">O que era promessa</h2>
+                    <ul style="margin-left: 0;">
+                        <li>Junior devs viram sêniors rápido</li>
+                        <li>Ferramentas para acelerar</li>
+                        <li>Menos boilerplate</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 style="color: #6b7280; font-size: 1.3em;">O que aconteceu realmente</h2>
+                    <ul style="margin-left: 0;">
+                        <li>Junior vira editor de código gerado</li>
+                        <li>Sênior vira revisor full-time</li>
+                        <li>Menos aprendizado, mais monotonia</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 30px; padding: 20px; background: #fef3c7; border-left: 4px solid #eab308; border-radius: 6px;">
+                <p><strong>Resultado:</strong> 48% criaram novos papéis, mas 91% tentam contratar habilidades em AI. Gap de 43 pontos percentuais.</p>
+            </div>
+        </div>
+
+        <!-- Slide 8: Leadership Pressure -->
+        <div class="slide slide-content">
+            <h1>Pressão de leadership & desafios técnicos 2026</h1>
+            <div class="two-column">
+                <div class="stat-box">
+                    <div class="stat-number" style="font-size: 2.5em;"><span class="color-danger">98%</span></div>
+                    <div class="stat-label">dos tech executives reportam <strong>aumento na pressão da board</strong> para justificar ROI de AI</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" style="font-size: 2.5em;"><span class="color-warning">56.3%</span></div>
+                    <div class="stat-label">dos admins identificam <strong>tech debt como maior desafio</strong></div>
+                </div>
+            </div>
+            <p style="margin-top: 40px; font-size: 1.15em; color: #374151;">
+                <strong>Verification</strong> virou o novo bottleneck de delivery.
+            </p>
+        </div>
+
+        <!-- Slide 9: Success Cases -->
+        <div class="slide slide-content">
+            <h1>Por que alguns conseguem retorno</h1>
+            <div style="margin: 30px 0;">
+                <div class="stat-box" style="border-left-color: #22c55e;">
+                    <div class="stat-number"><span class="color-success">5%</span></div>
+                    <div class="stat-label">das empresas conseguem <strong>ROI real</strong></div>
+                </div>
+                <div class="stat-box" style="border-left-color: #eab308;">
+                    <div class="stat-number"><span class="color-warning">35%</span></div>
+                    <div class="stat-label">reportam <strong>retorno parcial</strong> (média 1.7x)</div>
+                </div>
+            </div>
+            <h2 style="margin-top: 40px; font-size: 1.3em;">Três coisas em comum:</h2>
+            <ul>
+                <li><strong>Escopo bem definido</strong> — Automação de processos específicos, não "AI em tudo"</li>
+                <li><strong>Guardrails</strong> — Validação automática em vez de review humano</li>
+                <li><strong>Métricas honestas</strong> — Redução de tempo real, não "horas estimadas"</li>
+            </ul>
+        </div>
+
+        <!-- Slide 10: What to Expect -->
+        <div class="slide slide-content">
+            <h1>O que esperar em 2027</h1>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>📊 Board Pressure</h3>
+                    <p>CEOs questionam bilhões em spend sem retorno</p>
+                </div>
+                <div class="card">
+                    <h3>🛡️ Technical Correction</h3>
+                    <p>Mais guardrails, formal verification, testes reais</p>
+                </div>
+                <div class="card">
+                    <h3>🎯 Role Clarification</h3>
+                    <p>Clareza sobre quando usar ou não usar AI</p>
+                </div>
+            </div>
+            <p style="margin-top: 30px; font-size: 1.15em; color: #374151;">
+                <strong>Previsão Gartner:</strong> 40% dos agentic AI projects serão cancelados até 2027.
+            </p>
+            <p style="margin-top: 15px; color: #6b7280;">
+                Isso é a correção. É mercado saindo do hype.
+            </p>
+        </div>
+
+        <!-- Slide 11: Key Takeaways -->
+        <div class="slide slide-content">
+            <h1>Conclusão: O Plot Twist Real</h1>
+            <div style="margin: 40px 0;">
+                <div style="padding: 20px; background: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 6px; margin-bottom: 20px;">
+                    <p><strong>A narrativa mudou:</strong></p>
+                    <p>De "AI vai resolver tudo" para "AI é uma ferramenta que precisa de muita estrutura"</p>
+                </div>
+                <div style="padding: 20px; background: #f0f9ff; border-left: 4px solid #3b82f6; border-radius: 6px; margin-bottom: 20px;">
+                    <p><strong>A verdadeira vantagem competitiva:</strong></p>
+                    <p>Não é quem mais usa AI. É quem usa AI <strong>com menos overhead operacional</strong></p>
+                </div>
+                <div style="padding: 20px; background: #fef3c7; border-left: 4px solid #eab308; border-radius: 6px;">
+                    <p><strong>O desafio:</strong></p>
+                    <p>Requer arquitetura, design cuidadoso e expectativas ajustadas — não só adoção de ferramenta</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Thank You -->
+        <div class="slide slide-title-page">
+            <div>
+                <h1 style="font-size: 3em;">Obrigado</h1>
+                <p style="margin-top: 40px;">O Plot Twist do AI: Quando o Hype Encontra a Realidade</p>
+                <div class="author" style="margin-top: 60px;">
+                    <img src="../../static/img/logo.png" alt="Rafael">
+                    <div style="text-align: left;">
+                        <p style="font-weight: 600; margin: 0;">Rafael Berçam</p>
+                        <p style="font-size: 0.9em; margin: 0; color: #9ca3af;">Análise de AI, ROI e Implementação Técnica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="prevBtn" onclick="changeSlide(-1)">← Anterior</button>
+            <div class="logo-bar">
+                <img src="../../static/img/favicon-512.png" alt="Logo">
+                <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">12</span></span>
+            </div>
+            <button id="nextBtn" onclick="changeSlide(1)">Próximo →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[n].classList.add('active');
+            document.getElementById('currentSlide').textContent = n + 1;
+
+            document.getElementById('prevBtn').disabled = n === 0;
+            document.getElementById('nextBtn').disabled = n === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide >= totalSlides) currentSlide = totalSlides - 1;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+            if (e.key === 'ArrowRight') changeSlide(1);
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>
