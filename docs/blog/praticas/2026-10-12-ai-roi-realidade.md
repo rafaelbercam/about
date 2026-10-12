@@ -6,6 +6,10 @@ tags: [ia, roi, mercado, desenvolvimento, tech-debt, pratica]
 date: 2026-10-12
 ---
 
+:::info Glossário de Termos Técnicos
+Se você encontrar palavras em negrito ou com um asterisco (como *termo*), consulte a seção **Glossário** no final deste artigo para entender seu significado.
+:::
+
 # O Plot Twist do AI: Quando o Hype Encontra a Realidade
 
 Há dois anos, todo anúncio trazia AI. Toda empresa publicava seu plano de investimento em IA generativa. Os números era astronômicos: bilhões em R&D, pilotos em cada departamento, promessas de automação de 80% das tarefas. Hoje, em outubro de 2026, olhamos para trás e vemos o resultado real.
@@ -218,6 +222,56 @@ Isso não quer dizer que AI é inútil. Significa que AI é útil em contextos e
 O plot twist é que a verdadeira vantagem competitiva não é quem mais usa AI. É quem usa AI **com menos overhead operacional**. E isso requer arquitetura, não só adoção de ferramenta.
 
 Os números vão virar para o outro lado em 2027, quando apenas as empresas que resolveram isso continuarem gerando retorno. Outras vão ter acumulado debt e estarão em posição mais fraca.
+
+---
+
+## Glossário de Termos Técnicos
+
+Se você não está familiarizado com o mundo de desenvolvimento, aqui estão os termos-chave usados neste artigo:
+
+**ROI** — *Return on Investment* (Retorno sobre Investimento). É a medida de quanto lucro ou valor uma empresa ganha em relação ao que gastou. Se gastou 100 e ganhou 150, teve 50% de ROI.
+
+**GenAI / IA Generativa** — Inteligência Artificial que gera conteúdo novo (texto, código, imagens). Exemplos: ChatGPT, Claude. Diferente de IA que apenas classifica ou detecta padrões.
+
+**P&L** — *Profit and Loss* (Lucro e Perda). Demonstrativo financeiro que mostra receitas menos despesas. Se o P&L não melhorou, a empresa não fez dinheiro com o investimento.
+
+**Prompt** — Uma instrução ou pergunta que você digita para uma IA. Ex: "Escreva um código que...". A qualidade do prompt afeta a qualidade da resposta.
+
+**Produção** — Ambiente onde o software funciona para usuários reais, não em testes. Bugs em produção afetam clientes de verdade.
+
+**Boilerplate** — Código padrão que você reutiliza em vários projetos. Exemplo: estrutura básica de um servidor web. É considerado "chato" de escrever, mas necessário.
+
+**Merge** — Incorporar mudanças de código de uma pessoa com o código de outra. É o passo final antes de novas funcionalidades entrar em produção.
+
+**Code Review** — Revisar código escrito por alguém antes de usar. Um colega lê para encontrar erros, falhas de segurança ou melhorias.
+
+**Requirements Debt / Testing Debt / Design Debt** — "Débito técnico" é quando você deixa algo de forma incompleta ou de baixa qualidade para ganhar tempo agora, mas vai pagar um preço later. É como pedir empréstimo: você ganha tempo hoje, mas depois precisa "pagar" com mais trabalho.
+
+**Guardrails** — Limites ou restrições programadas para impedir que um sistema faça coisas ruins. Ex: "não gere código sem testes automáticos".
+
+**Edge Cases** — Situações extremas ou inesperadas que um programa não foi projetado para. Ex: o que acontece se o usuário inserir números negativos quando o sistema espera positivos?
+
+**Overhead** — Custo adicional ou carga extra. "Review overhead" = tempo extra gasto revisando código.
+
+**Schema** — Estrutura de um banco de dados. Define quais informações você pode armazenar e como.
+
+**Validation / Validação** — Verificar se algo atende aos critérios esperados. "Validar código" = checar se funciona corretamente.
+
+**Throughput** — Quantidade de trabalho ou transações que um sistema consegue processar em um tempo determinado. Sistemas com alto throughput são rápidos.
+
+**Sprint** — Ciclo de desenvolvimento (geralmente 1-4 semanas) onde um time trabalha em funcionalidades específicas. Ao final, faz uma revisão.
+
+**Post-mortem** — Análise feita após um incidente/falha séria para entender o que deu errado e como evitar no futuro.
+
+**Dataset** — Conjunto de dados usado para treinar ou testar um sistema. Maior o dataset, melhor o treinamento.
+
+**Hype** — Entusiasmo excessivo ou "buzz" do mercado sobre algo. Nem sempre corresponde à realidade.
+
+**Agentic AI** — IA que age de forma autônoma, tomando decisões e executando tarefas sem intervenção humana a cada passo. Diferente de AI que apenas responde perguntas.
+
+**Refatorar** — Reescrever código mantendo a mesma funcionalidade, mas melhorando a qualidade, legibilidade ou performance.
+
+**Escalabilidade** — Capacidade de um sistema crescer e lidar com mais usuários/dados sem quebrar ou ficar lento.
 
 ---
 
