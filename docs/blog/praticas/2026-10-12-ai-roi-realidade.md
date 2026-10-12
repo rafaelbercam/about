@@ -146,7 +146,7 @@ Muitas equipes assumiram que porque o código parecia funcionar nos testes (que 
 
 **89% das organizações tiveram incidentes relacionados a AI em produção**. Alguns foram pequenos; outros custaram dinheiro real.
 
-<div style={{textAlign: \'center\', margin: \'30px 0\', fontSize: \'12px\', color: \'#666\'}}>
+<div style={{textAlign: 'center', margin: '30px 0', fontSize: '12px', color: '#666'}}>
 <strong>Fonte:</strong> Fonte: 2026 Production Incident Survey
 </div>
 
@@ -219,7 +219,7 @@ A qualidade do código gerado por AI é consistentemente pior que código escrit
 
 **Tipos de erro específicos:**
 
-<div style={{textAlign: \'center\', margin: \'30px 0\', fontSize: \'12px\', color: \'#666\'}}>
+<div style={{textAlign: 'center', margin: '30px 0', fontSize: '12px', color: '#666'}}>
 <strong>Fonte:</strong> Fonte: DeepCode 2026 + CodeRabbit Analysis
 </div>
 
@@ -256,7 +256,7 @@ Por quê? Porque código escrito por um humano segue padrões, convenções e es
 
 O resultado: **98% dos tech executives reportam aumento na pressão da board** para justificar ROI de AI em 2026, enquanto **56.3% dos admins identificam tech debt como seu maior desafio**.
 
-<div style={{textAlign: \'center\', margin: \'30px 0\', fontSize: \'12px\', color: \'#666\'}}>
+<div style={{textAlign: 'center', margin: '30px 0', fontSize: '12px', color: '#666'}}>
 <strong>Fonte:</strong> Fonte: 2026 Tech Leadership Survey
 </div>
 
@@ -328,7 +328,7 @@ Enquanto isso, o sênior dev não escalou. Ele virou revisor em tempo integral, 
 
 O resultado é que **48% das organizações criaram novos papéis** (especialistas em AI, "AI architects"), mas **91% estão tentando contratar habilidades em AI**, o que significa que poucos têm gente qualificada para esses novos papéis.
 
-<div style={{textAlign: \'center\', margin: \'30px 0\', fontSize: \'12px\', color: \'#666\'}}>
+<div style={{textAlign: 'center', margin: '30px 0', fontSize: '12px', color: '#666'}}>
 <strong>Fonte:</strong> Fonte: 2026 AI Hiring & Roles Survey
 </div>
 
@@ -380,7 +380,7 @@ O resultado é que **48% das organizações criaram novos papéis** (especialist
 
 Ok, nem tudo é pessimismo. **5% das empresas conseguem ROI real com AI**. Outra **35% reporta retorno parcial**, com média de **1.7x de payoff**. A diferença tá em três coisas:
 
-<div style={{textAlign: \'center\', margin: \'30px 0\', fontSize: \'12px\', color: \'#666\'}}>
+<div style={{textAlign: 'center', margin: '30px 0', fontSize: '12px', color: '#666'}}>
 <strong>Fonte:</strong> Fonte: Enterprise AI ROI Analysis 2026
 </div>
 
