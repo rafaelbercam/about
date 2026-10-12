@@ -14,7 +14,7 @@ Há dois anos, todo anúncio trazia AI. Toda empresa publicava seu plano de inve
 
 <!--truncate-->
 
-## Os Números Que Ninguém Quer Admitir
+## Os números que ninguém quer admitir
 
 Comecemos com o óbvio: **56% dos CEOs de empresas tech reportam zero ROI** de seus investimentos em AI nos últimos 12 meses. Nem aumento de receita, nem redução de custo. Zero.
 
@@ -36,7 +36,7 @@ Gartner já está prevendo: **40% dos projetos de agentic AI serão cancelados a
 
 *Fonte: Gartner Prediction 2026*
 
-### A Pirâmide dos Fracassos
+### A pirâmide dos fracassos
 
 Há números ainda mais incisivos sobre o que acontece com os projetos que saem do piloto:
 
@@ -53,19 +53,19 @@ Em síntese: **80% dos projetos de IA falham em algum nível**. Essa é a taxa q
 
 Para contexto: quando você tira o hype da conversa e foca em implementação, o sucesso é raro.
 
-## A Transferência de Risco
+## A transferência de risco
 
 Então o que aconteceu? Como empresas grandes gastaram centenas de milhões e conseguiram tão pouco em retorno?
 
 A resposta está em três fatores que se reforçam: velocidade, confiança errada e transferência de responsabilidade.
 
-### Velocidade sem Checkpoint
+### Velocidade sem checkpoint
 
 O AI gerado código promete acelerar desenvolvimento. E tecnicamente entrega: você escreve um prompt e tem boilerplate, testes, queries SQL — tudo em segundos. O problema é que essa velocidade é ilusória quando você precisa revisar, testar e refatorar.
 
 Na prática, o que acontece é que a velocidade de geração **superou a velocidade de revisão humana**. Teams começaram a fazer merge de código gerado sem avaliação adequada porque o volume ficou impossível de revisar manualmente. E aí entra o segundo fator.
 
-### Confiança Errada em Ferramenta
+### Confiança errada em ferramenta
 
 Muitas equipes assumiram que porque o código parecia funcionar nos testes (que também foram gerados por AI), ele estava pronto para produção. O resultado foi previsível.
 
@@ -94,7 +94,7 @@ Para ser específico: 58% são erros lógicos, 52% são casos edge não tratados
 
 *Fonte: DeepCode 2026 + CodeRabbit Analysis*
 
-### A Nova Função do Revisor
+### A nova função do revisor
 
 Aqui entra a transferência de responsabilidade. O desenvolvedor deixou de ser o responsável pela qualidade e virou o revisor. Exceto que revisar código gerado por AI **é mais cansativo que escrever o código**.
 
@@ -108,7 +108,7 @@ O resultado: **98% dos tech executives reportam aumento na pressão da board** p
 
 Verification virou o novo bottleneck de delivery.
 
-## O Funil da Velocidade Falsa
+## O funil da velocidade falsa
 
 Vou desenhar o padrão que acontece em corporações:
 
@@ -122,7 +122,7 @@ Vou desenhar o padrão que acontece em corporações:
 
 O resultado é que você não fica mais rápido. Fica mais lento porque a densidade de bugs aumentou.
 
-### O Custo Oculto: Debt Acelerado
+### O custo oculto: debt acelerado
 
 Aqui tá a parte que vai custar nos próximos 2-3 anos.
 
@@ -136,7 +136,7 @@ AI causa um spike em dois tipos específicos de debt:
 
 Enquanto isso, você **não reduz design debt**: AI não refatora arquitetura, cria mais camadas.
 
-## A Mudança de Papéis (e Por Que é Ruim)
+## A mudança de papéis (e por que é ruim)
 
 Aqui tem um aspecto menos óbvio que vai te bater nos próximos 2 anos.
 
@@ -156,7 +156,7 @@ O resultado é que **48% das organizações criaram novos papéis** (especialist
 
 É um ciclo: velocidade falsa → mais trabalho de review → contratação de mais reviewers → pressão por mais velocidade.
 
-## Por Que Alguns Conseguem Retorno
+## Por que alguns conseguem retorno
 
 Ok, nem tudo é pessimismo. **5% das empresas conseguem ROI real com AI**. Outra **35% reporta retorno parcial**, com média de **1.7x de payoff**. A diferença tá em três coisas:
 
@@ -164,25 +164,25 @@ Ok, nem tudo é pessimismo. **5% das empresas conseguem ROI real com AI**. Outra
 
 *Fonte: Enterprise AI ROI Analysis 2026*
 
-### 1. Escopo Bem Definido
+### 1. escopo bem definido
 
 As empresas que conseguem retorno usam AI para automação de **processos específicos com critério claro de sucesso**, não "vamos usar AI em tudo".
 
 Exemplos que funcionam: data entry validation, log parsing, formatação de documentos. Áreas onde o output é verificável mecanicamente.
 
-### 2. Overhead de Review Aceitável
+### 2. overhead de review aceitável
 
 Elas investem em guardrails, não contam com review humano como primary control. Usam validation automática, testes que realmente testam o comportamento esperado, e aceitam uma taxa de erro conhecida.
 
 No banco de dados: especificam schema explícito, geram apenas dentro de constraints, validam saída antes de usar.
 
-### 3. Métrica Honesta
+### 3. métrica honesta
 
 Medem Real ROI, não "horas estimadas economizadas" (que virou o padrão de mentira corporativa). Medem: reduziu tempo end-to-end? Reduziu erros? Aumentou throughput?
 
 Se a resposta é "não, mas economizamos 200 horas/ano em boilerplate" — isso não é ROI, é uma redução de custo que foi compensada por overhead de review.
 
-## O Que Esperar em 2027
+## O que esperar em 2027
 
 Esse ciclo tá chegando ao fim. Há sinais:
 
@@ -196,7 +196,7 @@ Esse ciclo tá chegando ao fim. Há sinais:
 
 Gartner prevê 40% de cancelamento de agentic AI projects em 2027. Isso é a correção. É mercado saindo do hype.
 
-## Para Você, Como Engenheiro
+## Para você, como engenheiro
 
 Se você tá em uma dessas empresas que apostou errado em AI, aqui tá a realidade pragmática:
 
