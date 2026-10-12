@@ -19,11 +19,13 @@ Há dois anos, todo anúncio trazia AI. Toda empresa publicava seu plano de inve
 Comecemos com o óbvio: **56% dos CEOs de empresas tech reportam zero ROI** de seus investimentos em AI nos últimos 12 meses. Nem aumento de receita, nem redução de custo. Zero.
 
 ![ROI de Investimentos em AI - CEOs 2026](/img/blog/graphs/ceo-roi.png)
+
 *Fonte: Why 56% of CEOs See Zero AI ROI (2026)*
 
 O número fica mais grave quando você olha para generative AI especificamente. De aproximadamente **300 empresas globais** que investiram bilhões em pilotos de GenAI, apenas **5% confirmou crescimento mensurável de receita**. Os outros 95%? Nenhum retorno tangível.
 
 ![GenAI Pilots: Resultado Real (~300 Empresas)](/img/blog/graphs/genai-pilots.png)
+
 *Fonte: AI ROI: Why Only 5% of Enterprises See Real Returns in 2026*
 
 Pior ainda: **95% dos pilotos de GenAI produzem zero impacto mensurável em P&L**, segundo o **MIT Project NANDA (2025)**. Quer dizer, praticamente todos os pilotos de IA que rodam em laboratórios corporativos não saem de lá.
@@ -31,6 +33,7 @@ Pior ainda: **95% dos pilotos de GenAI produzem zero impacto mensurável em P&L*
 Gartner já está prevendo: **40% dos projetos de agentic AI serão cancelados até 2027** conforme os custos escalam e a "utilidade mágica" nunca materializa.
 
 ![Agentic AI Projects: Previsão de Cancelamento até 2027](/img/blog/graphs/agentic-cancellation.png)
+
 *Fonte: Gartner Prediction 2026*
 
 ### A Pirâmide dos Fracassos
@@ -43,6 +46,7 @@ Há números ainda mais incisivos sobre o que acontece com os projetos que saem 
 - **19.7%** atingem ou excedem os objetivos
 
 ![Pirâmide dos Fracassos (RAND Corporation - 2.400+ iniciativas)](/img/blog/graphs/pyramid-failures.png)
+
 *Fonte: RAND Corporation - Análise de 2.400+ iniciativas de AI empresariais*
 
 Em síntese: **80% dos projetos de IA falham em algum nível**. Essa é a taxa que os analistas da RAND Corporation encontraram analisando **mais de 2.400 iniciativas de IA em empresas**. Oitenta por cento.
@@ -68,6 +72,7 @@ Muitas equipes assumiram que porque o código parecia funcionar nos testes (que 
 **89% das organizações tiveram incidentes relacionados a AI em produção**. Alguns foram pequenos; outros custaram dinheiro real.
 
 ![Organizações com Incidentes de AI em Produção](/img/blog/graphs/production-incidents.png)
+
 *Fonte: 2026 Production Incident Survey*
 
 A qualidade do código gerado por AI é consistentemente pior que código escrito por desenvolvedores:
@@ -78,6 +83,7 @@ A qualidade do código gerado por AI é consistentemente pior que código escrit
 - **44% das tarefas críticas geram vulnerabilidades de segurança**
 
 ![Qualidade: Código AI vs Código Humano](/img/blog/graphs/code-quality.png)
+
 *Fonte: CodeRabbit 2026 Analysis + Veracode Security Report*
 
 **Tipos de erro específicos:**
@@ -85,6 +91,7 @@ A qualidade do código gerado por AI é consistentemente pior que código escrit
 Para ser específico: 58% são erros lógicos, 52% são casos edge não tratados, 42% é código duplicado ou lixo, e 42% viola requirements.
 
 ![Composição dos Erros em Código Gerado](/img/blog/graphs/error-types.png)
+
 *Fonte: DeepCode 2026 + CodeRabbit Analysis*
 
 ### A Nova Função do Revisor
@@ -96,6 +103,7 @@ Por quê? Porque código escrito por um humano segue padrões, convenções e es
 O resultado: **98% dos tech executives reportam aumento na pressão da board** para justificar ROI de AI em 2026, enquanto **56.3% dos admins identificam tech debt como seu maior desafio**.
 
 ![Pressão de Leadership & Desafios Técnicos 2026](/img/blog/graphs/board-pressure.png)
+
 *Fonte: 2026 Tech Leadership Survey*
 
 Verification virou o novo bottleneck de delivery.
@@ -143,6 +151,7 @@ Enquanto isso, o sênior dev não escalou. Ele virou revisor em tempo integral, 
 O resultado é que **48% das organizações criaram novos papéis** (especialistas em AI, "AI architects"), mas **91% estão tentando contratar habilidades em AI**, o que significa que poucos têm gente qualificada para esses novos papéis.
 
 ![Gap: Papéis Criados vs Demanda de Contratação](/img/blog/graphs/roles-gap.png)
+
 *Fonte: 2026 AI Hiring & Roles Survey*
 
 É um ciclo: velocidade falsa → mais trabalho de review → contratação de mais reviewers → pressão por mais velocidade.
@@ -152,6 +161,7 @@ O resultado é que **48% das organizações criaram novos papéis** (especialist
 Ok, nem tudo é pessimismo. **5% das empresas conseguem ROI real com AI**. Outra **35% reporta retorno parcial**, com média de **1.7x de payoff**. A diferença tá em três coisas:
 
 ![Distribuição de Resultado em Projetos AI](/img/blog/graphs/success-distribution.png)
+
 *Fonte: Enterprise AI ROI Analysis 2026*
 
 ### 1. Escopo Bem Definido
