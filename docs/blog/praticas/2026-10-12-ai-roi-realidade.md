@@ -63,7 +63,7 @@ A resposta está em três fatores que se reforçam: velocidade, confiança errad
 
 O AI gerado código promete acelerar desenvolvimento. E tecnicamente entrega: você escreve um prompt e tem boilerplate, testes, queries SQL — tudo em segundos. O problema é que essa velocidade é ilusória quando você precisa revisar, testar e refatorar.
 
-Na prática, o que acontece é que a velocidade de geração **superou a velocidade de revisão humana**. Teams começaram a fazer merge de código gerado sem avaliação adequada porque o volume ficou impossível de revisar manualmente. E aí entra o segundo fator.
+Na prática, o que acontece é que a velocidade de geração **superou a velocidade de revisão humana**. Times começaram a fazer merge de código gerado sem avaliação adequada porque o volume ficou impossível de revisar manualmente. E aí entra o segundo fator.
 
 ### Confiança errada em ferramenta
 
