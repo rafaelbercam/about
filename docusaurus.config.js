@@ -1,7 +1,7 @@
 // @ts-check
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const darkCodeTheme = require('prism-react-renderer/themes/oneDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -87,7 +87,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/social-card.png',
+      image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         defaultMode: 'light',
         respectPrefersColorScheme: true,

@@ -7,7 +7,11 @@ export default function LinkWrapper(props) {
 
   return (
     <div className="doc-sidebar-link-wrapper">
-      {icon && <span className="material-symbols-rounded sidebar-icon">{icon}</span>}
+      {icon && (
+        <span className="material-symbols-rounded sidebar-icon" style={{ marginRight: '0.5rem' }}>
+          {icon}
+        </span>
+      )}
       <LinkOriginal {...props} />
     </div>
   );

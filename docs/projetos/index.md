@@ -20,7 +20,7 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
   featured={true}
 />
 
-[Leia o artigo detalhado no blog](/about/blog/agentes-ia/hive-multi-agent)
+[Leia o artigo detalhado no blog](/docs/blog/agentes-ia/hive-multi-agent)
 
 ---
 
@@ -32,7 +32,7 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
   featured={true}
 />
 
-[Leia o case study completo no blog](/about/blog/bmad-method)
+[Leia o case study completo no blog](/docs/blog/agentes-ia/bmad-method)
 
 ---
 
@@ -44,7 +44,7 @@ Portfólio de projetos profissionais e pessoais focados em automação de testes
   featured={true}
 />
 
-[Leia o guia de implementação no blog](/blog/rag/guia-rag-langchain)
+[Leia o guia de implementação no blog](/docs/blog/rag/guia-rag-langchain)
 
 ---
 
