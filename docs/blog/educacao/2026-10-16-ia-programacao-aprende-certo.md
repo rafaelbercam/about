@@ -534,7 +534,7 @@ Não é. Claude é melhor pra reasoning. Copilot é melhor pra real-time. ChatGP
 ## Seu Plano dos Próximos 6 Meses
 
 ### Mês 1: Reset de Fundamentals
-- **Objetivo:** prova que consegues codificar sem IA
+- **Objetivo:** prova que você consegue codificar sem IA
 - **Projeto:** REST API com auth, CRUD, testes (sem Copilot)
 - **Leitura:** um capítulo/dia de "Design Data-Intensive Applications"
 - **Algoritmos:** 20 problems LeetCode (easy), entendendo lógica
@@ -573,11 +573,11 @@ Não otimize pra:
 - ❌ "Built with X, Y, Z" no CV
 
 Otimize pra:
-- ✅ Consegues explicar seu código pra alguém sem notas?
-- ✅ Debugas um bug em código que você não escreveu?
-- ✅ Desenhas uma arquitetura no whiteboard do zero?
-- ✅ Escreves código eficiente sem IA numa entrevista?
-- ✅ Lês código de 3 anos atrás e o melhoras?
+- ✅ Você consegue explicar seu código pra alguém sem notas?
+- ✅ Você consegue debugar um bug em código que você não escreveu?
+- ✅ Você consegue desenhar uma arquitetura no whiteboard do zero?
+- ✅ Você consegue escrever código eficiente sem IA numa entrevista?
+- ✅ Você consegue ler código de 3 anos atrás e o melhorar?
 
 ---
 
