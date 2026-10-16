@@ -52,13 +52,15 @@ const config = {
   themes: ['@docusaurus/theme-mermaid', '@easyops-cn/docusaurus-search-local'],
 
   plugins: [
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-XXXXXXXXXX', // Substituir pelo seu ID do GA4
-        anonymizeIP: true,
-      },
-    ],
+    // Google Analytics desabilitado em desenvolvimento
+    // Adicione seu tracking ID aqui quando for deployar
+    // [
+    //   '@docusaurus/plugin-google-gtag',
+    //   {
+    //     trackingID: 'G-SEU-ID-AQUI',
+    //     anonymizeIP: true,
+    //   },
+    // ],
   ],
 
   headTags: [
