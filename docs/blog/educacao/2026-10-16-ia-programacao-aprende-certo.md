@@ -511,7 +511,7 @@ Você faz o CI/CD, o deploy, o monitoring.
 
 ### 🚩 "Uso Copilot pra 80% do código"
 Você não tá aprendendo. Tá montando. Quando Copilot erra, você não sabe.
-**Fix:** use <20% (testes, boilerplate, comentários).
+**Fix:** use &lt;20% (testes, boilerplate, comentários).
 
 ### 🚩 "Não preciso estudar algoritmos, IA sabe"
 Algoritmos não é só "como fazer quick sort". É **como pensar**. Você vai otimizar queries errado, ter N+1, memory leaks.
