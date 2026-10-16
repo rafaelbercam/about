@@ -1,5 +1,5 @@
 ---
-slug: ia-programacao-como-aprender-sem-perder-o-neuronio
+slug: ia-programacao-como-aprender-certo
 title: "IA + Programação: Como Aprender Sem Perder o Neurônio"
 authors: [rafael]
 tags: [ia, programacao, educacao, aprendizado, desenvolvimento, junior, carreira]
