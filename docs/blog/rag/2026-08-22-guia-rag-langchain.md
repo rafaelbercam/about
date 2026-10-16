@@ -926,7 +926,8 @@ def chunk_documents(docs, size=1000, overlap=200):
 
 **Repositório de referência:**
 - [rag-langchain (produção)](https://github.com/rafaelbercam/rag-langchain) - Implementação real com testes
-- [Guias de RAG](/docs/blog/rag/) - Documentação completa sobre RAG
+- [RAG: Fundamentos](/docs/blog/rag/rag-fundamentos) - Conceitos fundamentais
+- [RAG vs Long Context](/docs/blog/rag/rag-vs-long-context) - Análise comparativa
 
 **Alternativas a avaliar:**
 - [Llamaindex](https://www.llamaindex.ai/) - Wrapper de alto nível sobre LangChain

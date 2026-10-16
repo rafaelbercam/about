@@ -71,7 +71,7 @@ De BLEU/ROUGE até avaliação automática com modelos de linguagem. Como medir 
 **9. [Tendências de IA em 2026: Papers e Releases](/docs/blog/praticas/tendencias-ia-2026)** *(01/09/2026)*
 O que mudou em 2026. Papers impactantes, releases de modelos e shifts no mercado.
 
-**10. [Troubleshooting: Problemas Comuns em Sistemas de IA](/docs/blog/praticas/troubleshooting-ia)** *(10/09/2026)*
+**10. [Troubleshooting: Problemas Comuns em Sistemas de IA](/docs/blog/praticas/troubleshooting-sistemas-ia)** *(10/09/2026)*
 Checklist prático com soluções para alucinações, latência, acurácia, RAG quebrado e muito mais.
 
 **11. [Claude + Devin Cheatsheet: Comandos de Otimização](/docs/blog/praticas/claude-devin-cheatsheet)** *(15/09/2026)*
@@ -99,7 +99,7 @@ Análise crítica do fracasso de 80% dos projetos de IA. ROI real, qualidade de 
 
 **Quer implementar algo?**
 - [Guia RAG + LangChain](/docs/blog/rag/guia-rag-langchain) — Pronto para usar
-- [Troubleshooting](/docs/blog/praticas/troubleshooting-ia) — Resolver problemas
+- [Troubleshooting](/docs/blog/praticas/troubleshooting-sistemas-ia) — Resolver problemas
 
 **Resolvendo um problema específico?**
 - [RAG vs Long Context](/docs/blog/rag/rag-vs-long-context) — Escolher a abordagem
