@@ -1,5 +1,8 @@
 {
   "label": "Práticas e Ferramentas",
   "position": 4,
-  "collapsed": false
+  "collapsed": false,
+  "customProps": {
+    "icon": "build"
+  }
 }

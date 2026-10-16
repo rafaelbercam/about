@@ -1,5 +1,8 @@
 {
-  "label": "Arquitetura de Agentes",
+  "label": "Arquitetura",
   "position": 3,
-  "collapsed": false
+  "collapsed": false,
+  "customProps": {
+    "icon": "account_tree"
+  }
 }

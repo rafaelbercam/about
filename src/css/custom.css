@@ -4,107 +4,164 @@
  * work well for content-centric websites.
  */
 
-/* GitHub Light Color Scheme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Indigo-Blue Light Color Scheme (softer, Hasura-like) */
 :root {
-  /* Primary colors - GitHub Blue */
-  --ifm-color-primary: #0969DA;
-  --ifm-color-primary-dark: #033D8B;
-  --ifm-color-primary-darker: #0860CA;
-  --ifm-color-primary-darkest: #033D8B;
-  --ifm-color-primary-light: #54AEFF;
-  --ifm-color-primary-lighter: #79C0FF;
-  --ifm-color-primary-lightest: #BFD4F2;
+  /* Primary colors - Indigo blue */
+  --ifm-color-primary: #5B6DD4;
+  --ifm-color-primary-dark: #4C5FD5;
+  --ifm-color-primary-darker: #3E4FB0;
+  --ifm-color-primary-darkest: #2F3F8B;
+  --ifm-color-primary-light: #7A8AE5;
+  --ifm-color-primary-lighter: #9BAEF5;
+  --ifm-color-primary-lightest: #D5DCFF;
 
   /* Background - Light theme */
   --ifm-background-color: #FFFFFF;
-  --ifm-background-surface-color: #F6F8FA;
+  --ifm-background-surface-color: #F7F8FB;
 
   /* Navbar */
   --ifm-navbar-background-color: #FFFFFF;
   --ifm-navbar-height: 60px;
 
   /* Footer */
-  --ifm-footer-background-color: #F6F8FA;
+  --ifm-footer-background-color: #F7F8FB;
 
-  /* Text colors - High contrast */
-  --ifm-font-color-base: #24292F;
-  --ifm-font-color-secondary: #656D76;
+  /* Text colors - Softer contrast */
+  --ifm-font-color-base: #1F2430;
+  --ifm-font-color-secondary: #5B6475;
 
   /* Typography */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(9, 105, 218, 0.08);
+  --docusaurus-highlighted-code-line-bg: rgba(91, 109, 212, 0.08);
 
   /* Borders */
-  --ifm-border-color: #D0D7DE;
+  --ifm-border-color: #E3E6EE;
 }
 
-/* Dark mode support */
+/* Dark mode support - Slate azulado suave */
 [data-theme='dark'] {
-  --ifm-background-color: #0D1117;
-  --ifm-background-surface-color: #161B22;
-  --ifm-navbar-background-color: #0D1117;
-  --ifm-footer-background-color: #161B22;
-  --ifm-font-color-base: #F0F6FC;
-  --ifm-font-color-secondary: #C9D1D9;
-  --ifm-border-color: #30363D;
-  --docusaurus-highlighted-code-line-bg: rgba(9, 105, 218, 0.15);
-}
+  --ifm-background-color: #161B26;
+  --ifm-background-surface-color: #1E2433;
+  --ifm-navbar-background-color: #161B26;
+  --ifm-footer-background-color: #1E2433;
+  --ifm-font-color-base: #D6DBE5;
+  --ifm-font-color-secondary: #8D95A6;
+  --ifm-border-color: #2C3447;
+  --docusaurus-highlighted-code-line-bg: rgba(142, 156, 255, 0.08);
 
-/* Ensure high contrast for dark mode text */
-[data-theme='dark'] body {
-  color: #F0F6FC;
-}
-
-[data-theme='dark'] h1,
-[data-theme='dark'] h2,
-[data-theme='dark'] h3,
-[data-theme='dark'] h4,
-[data-theme='dark'] h5,
-[data-theme='dark'] h6 {
-  color: #F0F6FC;
-}
-
-[data-theme='dark'] .docusaurus-mt-lg,
-[data-theme='dark'] p {
-  color: #F0F6FC;
+  /* Primary mais claro pra dark mode (contraste AA) */
+  --ifm-color-primary: #8E9CFF;
+  --ifm-color-primary-dark: #7A8AE5;
+  --ifm-color-primary-darker: #6B7ACE;
+  --ifm-color-primary-darkest: #5B6DD4;
+  --ifm-color-primary-light: #A8B5FF;
+  --ifm-color-primary-lighter: #C4CEFF;
+  --ifm-color-primary-lightest: #E0E5FF;
 }
 
 /* ============ Navbar ============ */
 .navbar {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border-bottom: 1px solid var(--ifm-border-color);
 }
 
 .navbar__logo {
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.3px;
 }
 
-/* ============ Main Layout ============ */
-.main-wrapper {
-  margin-left: 0 !important;
-  margin-top: 0 !important;
+/* Search centering */
+.navbar__inner {
+  gap: 1rem;
+}
+
+.navbar-search {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 996px) {
+  .navbar-search {
+    position: relative;
+    left: auto;
+    transform: none;
+  }
+}
+
+/* ============ Sidebar (Hasura-like) ============ */
+.sidebar {
+  padding: 1rem 0;
+}
+
+.sidebar-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-font-color-secondary);
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Sidebar items com ícones Material */
+.docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link- {
+  padding: 0.25rem 0;
+}
+
+.docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Category- > a,
+.docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link- > a {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Category- > a:hover,
+.docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link- > a:hover {
+  background-color: rgba(91, 109, 212, 0.08);
+}
+
+.docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Category- > a.active,
+.docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link- > a.active {
+  background-color: rgba(91, 109, 212, 0.12);
+  color: var(--ifm-color-primary);
+  font-weight: 500;
+}
+
+[data-theme='dark'] .docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Category- > a:hover,
+[data-theme='dark'] .docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link- > a:hover {
+  background-color: rgba(142, 156, 255, 0.08);
+}
+
+[data-theme='dark'] .docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Category- > a.active,
+[data-theme='dark'] .docSidebarItem_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebarItem-Link- > a.active {
+  background-color: rgba(142, 156, 255, 0.12);
 }
 
 /* ============ Footer ============ */
 .footer {
   border-top: 1px solid var(--ifm-border-color);
+  background-color: var(--ifm-footer-background-color);
 }
 
 .footer__link-item {
   color: var(--ifm-color-primary);
+  transition: color 0.2s ease;
 }
 
 .footer__link-item:hover {
+  color: var(--ifm-color-primary-dark);
   text-decoration: underline;
 }
 
 /* ============ Documentation ============ */
-.docusaurus-mt-lg {
-  margin-top: 2rem;
-}
-
 .table-of-contents {
-  border-left: 2px solid var(--ifm-border-color);
+  border-left: 2px solid var(--ifm-color-primary-lightest);
   padding-left: 1rem;
 }
 
@@ -138,39 +195,61 @@
   padding: 0 var(--ifm-pre-padding);
 }
 
+pre {
+  border-radius: 8px;
+  border: 1px solid var(--ifm-border-color);
+}
+
 /* ============ Links ============ */
 a {
   color: var(--ifm-color-primary);
+  transition: color 0.2s ease;
+  text-decoration: none;
 }
 
 a:hover {
   color: var(--ifm-color-primary-dark);
+  text-decoration: underline;
 }
 
 /* ============ Buttons ============ */
 .button {
   border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
 .button--primary {
   background-color: var(--ifm-color-primary);
+  border: 2px solid var(--ifm-color-primary);
 }
 
 .button--primary:hover {
   background-color: var(--ifm-color-primary-dark);
+  border-color: var(--ifm-color-primary-dark);
 }
 
-/* ============ Font Awesome Icons in Sidebar ============ */
-.sidebar-title {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.sidebar-title .fa-solid:before,
-.sidebar-title .fa-regular:before,
-.sidebar-title .fa-brands:before {
-  margin-right: 0.25rem;
+.button--secondary {
+  border: 2px solid var(--ifm-color-primary);
   color: var(--ifm-color-primary);
-  font-size: 0.95rem;
+}
+
+.button--secondary:hover {
+  background-color: rgba(91, 109, 212, 0.08);
+}
+
+/* ============ Material Symbols Icons ============ */
+.material-symbols-rounded {
+  font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+}
+
+.sidebar-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--ifm-color-primary);
 }

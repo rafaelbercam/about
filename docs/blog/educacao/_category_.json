@@ -1,5 +1,8 @@
 {
   "label": "Educação e Aprendizado",
   "position": 5,
-  "collapsed": false
+  "collapsed": false,
+  "customProps": {
+    "icon": "school"
+  }
 }

@@ -49,7 +49,18 @@ const config = {
     mermaid: true,
   },
 
-  themes: ['@docusaurus/theme-mermaid', '@easyops-cn/docusaurus-search-local'],
+  themes: [
+    '@docusaurus/theme-mermaid',
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        hashed: true,
+        language: ['pt'],
+        indexBlog: true,
+        indexPages: true,
+      },
+    ],
+  ],
 
   plugins: [
     // Google Analytics desabilitado em desenvolvimento
@@ -68,10 +79,7 @@ const config = {
       tagName: 'link',
       attributes: {
         rel: 'stylesheet',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-        integrity: 'sha512-iecdLmaskl7CVJkEZSMUkrQ6usknVF4SpMwOVNNwtpSymRsswroEBWePmzKZf38lH05OWv95IrsPJ+1v0GCHQ==',
-        crossOrigin: 'anonymous',
-        referrerPolicy: 'no-referrer',
+        href: 'https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,500,0,0',
       },
     },
   ],
@@ -94,6 +102,11 @@ const config = {
         },
         items: [
           {
+            to: '/docs/intro',
+            label: 'Docs',
+            position: 'left',
+          },
+          {
             href: 'https://rafaelbercam.github.io/',
             label: 'Currículo',
             position: 'right',
@@ -111,7 +124,7 @@ const config = {
         ],
       },
       footer: {
-        style: 'light',
+        style: 'dark',
         links: [
           {
             title: 'Conteúdo',

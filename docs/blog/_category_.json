@@ -1,8 +1,8 @@
 {
-  "label": "Blog",
-  "position": 4,
+  "label": "Artigos",
+  "position": 3,
   "collapsed": false,
   "customProps": {
-    "icon": "fa-solid fa-newspaper"
+    "icon": "article"
   }
 }
