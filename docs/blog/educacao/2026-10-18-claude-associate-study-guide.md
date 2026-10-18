@@ -385,7 +385,7 @@ Equivalente a:
 | 750-799 | Passou (competente) | Considerar Claude Developer |
 | 800-849 | Passou (proficiente) | Qualificado para Developer |
 | 850+ | Passou (expert) | Muito bem preparado |
-| <720 | Não passou | Estudar 2-3 semanas, remarcar |
+| &lt;720 | Não passou | Estudar 2-3 semanas, remarcar |
 
 ---
 

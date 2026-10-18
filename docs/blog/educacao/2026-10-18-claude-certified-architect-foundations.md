@@ -423,7 +423,7 @@ Equivale a:
 | 750-799 | Passou (competente) | Competência sólida demonstrada |
 | 800-899 | Passou (proficiente) | Expertise no nível esperado |
 | 900+ | Passou (expert) | Excepcional |
-| <720 | Não passou | Retomar estudo, remarcar prova |
+| &lt;720 | Não passou | Retomar estudo, remarcar prova |
 
 ---
 
